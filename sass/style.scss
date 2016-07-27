@@ -1,0 +1,79 @@
+$font: "Roboto", sans-serif;
+$primary-color: #212121;
+$secondary-color: #b71c1c;
+$light-text: #eee;
+$border-radius__circular: 50%;
+@mixin container {
+    max-width   : 980px;
+    margin-right: auto;
+    margin-left : auto;
+}
+@mixin borde-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius   : $radius;
+    -ms-border-radius    : $radius;
+    border-radius        : $radius;
+}
+@mixin flexbox {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+@mixin pad ($values...) {
+    padding: $values;
+}
+/* ---------------
+GENERAL
+--------------- */
+#main-body {
+    font-family: $font;
+}
+
+.page-content {
+    @include container;
+}
+/* ---------------
+HEADER
+--------------- */
+.mdl-layout__header {
+    background-color: $primary-color;
+    color           : $secondary-color;
+}
+
+.mdl-layout__tab-bar {
+    background-color: $primary-color;
+}
+
+.mdl-layout__tab {
+    color      : $light-text;
+    font-weight: normal;
+}
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active {
+    color      : $secondary-color;
+    font-weight: 500;
+}
+
+.drawer-header {
+    box-sizing             : border-box;
+    @include flexbox;
+    -webkit-flex-direction : column;
+    -ms-flex-direction     : column;
+    flex-direction         : column;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack          : end;
+    justify-content        : flex-end;
+    @include pad(16px 40px 0);
+    height                 : 150px;
+}
+
+.my-avatar {
+    width        : 50%;
+    height       : auto;
+    border-radius: $border-radius__circular;
+}
+@media only screen and (max-width: 1024px) {
+    .drawer-header {
+        @include pad(16px 16px 0);
+    }
+}
