@@ -34,7 +34,9 @@ a {
 }
 
 .mdl-button.mdl-button--colored {
-    color: $secondary-color;
+    color    : $secondary-color;
+    font-size: 1em;
+    padding  : 6px 16px;
 }
 
 .mdl-layout__header {
@@ -291,6 +293,6 @@ MEDIA QUERY
 }
 @media screen and (max-width: 325px) {
     .mdl-button.mdl-button--colored {
-        font-size: 0.75em;
+        font-size: 0.9em;
     }
 }
