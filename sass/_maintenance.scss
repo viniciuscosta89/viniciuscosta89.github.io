@@ -35,7 +35,7 @@ a {
 
 .mdl-button.mdl-button--colored {
     color    : $secondary-color;
-    font-size: 1em;
+    font-size: 16px;
     padding  : 6px 16px;
 }
 
@@ -293,6 +293,6 @@ MEDIA QUERY
 }
 @media screen and (max-width: 325px) {
     .mdl-button.mdl-button--colored {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 }
