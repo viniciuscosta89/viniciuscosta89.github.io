@@ -2,6 +2,16 @@ $font: "Roboto", sans-serif;
 $primary-color: #212121;
 $secondary-color: #b71c1c;
 $light-text: #eee;
+$blue-900: #0D47A1;
+$indigo-900: #1A237E;
+$green-oc: #9ecd20;
+$green-cv: rgba(65, 81, 8, 0.71);
+$orange-cv: #FF9800;
+$facebook: #3b5999;
+$twitter: #55acee;
+$linkedin: #0077B5;
+$gplus: #dd4b39;
+$instagram: #e95950;
 $border-radius__circular: 50%;
 @mixin container {
     max-width   : 980px;
@@ -19,19 +29,121 @@ $border-radius__circular: 50%;
     display: -ms-flexbox;
     display: flex;
 }
+@mixin align-items--center {
+    -webkit-box-align  : center;
+    -webkit-align-items: center;
+    -ms-flex-align     : center;
+    align-items        : center;
+}
+@mixin justify-content--center {
+    -webkit-box-pack       : center;
+    -webkit-justify-content: center;
+    -ms-flex-pack          : center;
+    justify-content        : center;
+}
 @mixin pad ($values...) {
     padding: $values;
 }
+
 /* ---------------
 GENERAL
 --------------- */
 #main-body {
+    box-sizing : border-box;
     font-family: $font;
 }
 
 .page-content {
     @include container;
 }
+
+a {
+    color          : $secondary-color;
+    text-decoration: none;
+    transition     : all 0.2s ease-in-out;
+}
+
+::selection {
+    background: $secondary-color;
+}
+
+.font-color--white {
+    color: $light-text;
+}
+
+.font-color--red {
+    color: $secondary-color;
+}
+
+.font-color--red:hover {
+    color: $primary-color;
+}
+
+.font-color--black {
+    color: $primary-color;
+}
+
+.font-color--facebook {
+    color: $facebook;
+}
+
+.font-color--gplus {
+    color: $gplus;
+}
+
+.font-color--instagram {
+    color: $instagram;
+}
+
+.font-color--linkedin {
+    color: $linkedin;
+}
+
+.font-color--twitter {
+    color: $twitter;
+}
+
+.font-size--1-5em {
+    font-size: 1.5em;
+}
+
+.bg-color--white {
+    background-color: #fff;
+}
+
+.bg-color--blue-900 {
+    background-color: $blue-900;
+}
+
+.bg-color--indigo-900 {
+    background-color: $indigo-900;
+}
+
+.bg-color--gold {
+    background-color: #c1a24e;
+}
+
+.bg-color--green-oc {
+    background-color: $green-oc;
+}
+
+.bg-color--green-cv {
+    background-color: $green-cv;
+}
+
+.bg-color--orange-cv {
+    background-color: $orange-cv;
+}
+
+.text-align--justify {
+    text-align     : justify;
+    text-align-last: left;
+}
+
+.no-bullets {
+    list-style-type: none;
+}
+
 /* ---------------
 HEADER
 --------------- */
@@ -40,18 +152,14 @@ HEADER
     color           : $secondary-color;
 }
 
-.mdl-layout__tab-bar {
-    background-color: $primary-color;
+.mdl-layout__drawer {
+    background  : $primary-color;
+    border-right: 1px solid $secondary-color;
+    color       : $secondary-color;
 }
 
-.mdl-layout__tab {
-    color      : $light-text;
-    font-weight: normal;
-}
-
-.mdl-layout.is-upgraded .mdl-layout__tab.is-active {
-    color      : $secondary-color;
-    font-weight: 500;
+.mdl-layout__drawer-button > .material-icons {
+    color: $secondary-color;
 }
 
 .drawer-header {
@@ -64,16 +172,205 @@ HEADER
     -ms-flex-pack          : end;
     justify-content        : flex-end;
     @include pad(16px 40px 0);
-    height                 : 150px;
+    height                 : auto;
 }
 
 .my-avatar {
-    width        : 50%;
+    width        : 75%;
     height       : auto;
     border-radius: $border-radius__circular;
 }
+
+.mdl-layout-subtitle {
+    display     : block;
+    font-size   : 14px;
+    font-weight : 500;
+    line-height : 0;
+    padding-left: 40px;
+}
+
+.mdl-layout__drawer > .mdl-navigation > .mdl-navigation__link {
+    color: #e0e0e0;
+
+    &:hover {
+        background-color: $secondary-color;
+        color           : $primary-color;
+    }
+}
+
+.mdl-navigation__link.is-active {
+    color         : #fff;
+    font-weight   : 500;
+    text-transform: uppercase;
+}
+
+/* ---------------
+PORTFOLIO
+--------------- */
+.mdl-card {
+    width: auto;
+}
+
+.mdl-card__media {
+    @include flexbox;
+    height         : 150px;
+    justify-content: center;
+    @include align-items--center;
+}
+
+.mdl-card__title-text {
+    font-weight: 400;
+}
+
+.media-card--img {
+    max-width : 100%;
+    max-height: 100%;
+}
+
+.mdl-card {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.07),0 10px 6px -4px rgba(0,0,0,.10),0 6px 12px 0 rgba(0,0,0,.07);
+        transform : translateY(-4px);
+    }
+}
+
+/* ---------------
+FOOTER
+--------------- */
+.mdl-mini-footer {
+    background-color: #b71c1c;
+    color           : #eee;
+}
+
+.mdl-mini-footer--list {
+    padding               : 0;
+    @include flexbox;
+    flex-wrap             : wrap;
+    -webkit-flex-direction: row;
+    -ms-flex-direction    : row;
+    flex-direction        : row;
+    @include align-items--center;
+    @include justify-content--center;
+}
+
+.mdl-mini-footer--social-btn {
+    background-color: transparent;
+    margin          : 8px 16px;
+    list-style-type : none;
+    width           : auto;
+    height          : auto;
+}
+
+.social-btn--footer {
+    display  : block;
+    font-size: 48px;
+}
+
+.social-btn {
+    display            : inline-block;
+    background-position: center;
+    background-size    : contain;
+    background-repeat  : no-repeat;
+    cursor             : pointer;
+    min-width          : 48px;
+    min-height         : 48px;
+}
+
+.social-btn__facebook:hover {
+    color: $facebook;
+}
+
+.social-btn__github:hover {
+    color: #000;
+}
+
+.social-btn__gplus:hover {
+    color: $gplus;
+}
+
+.social-btn__instagram:hover {
+    color: $instagram;
+}
+
+.social-btn__linkedin:hover {
+    color: $linkedin;
+}
+
+.social-btn__twitter:hover {
+    color: $twitter;
+}
+
+.logo-text {
+    font-size      : 1.5em;
+    color          : #fff;
+    line-height    : 1.5;
+    padding        : 8px 0;
+    text-decoration: none;
+    text-transform : uppercase;
+    white-space    : nowrap;
+}
+
+.footer-link {
+    color: #fff;
+}
+
+/* ---------------
+MEDIA QUERY
+--------------- */
+@media only screen and (min-width: 1025px) {
+    .mdl-mini-footer {
+        @include align-items--center;
+        margin-left: 240px;
+    }
+
+    .mdl-mini-footer--social-btn {
+        margin: 0 16px;
+    }
+
+    .social-btn--footer {
+        font-size : 24px;
+        min-width : auto;
+        min-height: auto;
+    }
+
+    .mdl-mini-footer--social-btn:first-child {
+        margin: 8px 16px 8px 0;
+    }
+}
 @media only screen and (max-width: 1024px) {
+    .mdl-layout__drawer.is-visible {
+        position: fixed;
+    }
+
+    .mdl-layout__drawer-button {
+        position        : fixed;
+        background-color: #212121;
+        @include flexbox;
+        @include align-items--center;
+        @include justify-content--center;
+    }
+
     .drawer-header {
         @include pad(16px 16px 0);
+    }
+
+    .mdl-layout__container {
+        height: auto;
+    }
+
+    .mdl-layout-subtitle {
+        padding-left: 16px;
+    }
+
+    .mdl-mini-footer {
+        -webkit-justify-content: center;
+        -ms-flex-pack          : center;
+        justify-content        : center;
+    }
+
+    .mdl-mini-footer--social-btn {
+        text-align: center;
     }
 }
