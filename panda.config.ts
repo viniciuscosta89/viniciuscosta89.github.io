@@ -3,7 +3,7 @@ import { defineConfig, defineGlobalStyles } from '@pandacss/dev';
 const globalCss = defineGlobalStyles({
 	':root': {
 		lineHeight: '1.5',
-		fontWeight: 'regular',
+		fontWeight: 'medium',
 		fontSynthesis: 'none',
 		textRendering: 'optimizeLegibility',
 		'-webkit-font-smoothing': 'antialiased',
@@ -169,10 +169,12 @@ export default defineConfig({
 				10: { value: '6.97rem' },
 			},
 			fonts: {
-				DEFAULT: { value: 'Space Grotesk, apple-system, sans-serif' },
+				DEFAULT: { value: 'Space Grotesk Variable, apple-system, sans-serif' },
 			},
 			fontWeights: {
-				regular: { value: '500' },
+				light: { value: '300' },
+				regular: { value: '400' },
+				medium: { value: '500' },
 				bold: { value: '700' },
 			},
 			radii: {

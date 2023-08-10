@@ -97,11 +97,18 @@ const HeaderGrid = styled('div', {
 	},
 });
 
-const HeaderTitle = styled('strong', {
+const HeaderTitle = styled('div', {
 	base: {
 		fontSize: '3',
-		fontWeight: 'bold',
 		letterSpacing: '-0.02081rem',
+
+		'& span': {
+			fontWeight: 'light',
+		},
+
+		'& strong': {
+			fontWeight: 'bold',
+		},
 	},
 });
 
@@ -156,7 +163,10 @@ function Header() {
 		<HeaderStyled initial={{ opacity: 0, y: -32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
 			<Container>
 				<HeaderGrid>
-					<HeaderTitle>viniciuscosta</HeaderTitle>
+					<HeaderTitle>
+						<span>vinicius</span>
+						<strong>costa</strong>
+					</HeaderTitle>
 
 					<HeaderSocialNetworks>
 						{socialNetworks.map(({ url, label, logo: Logo }) => (
