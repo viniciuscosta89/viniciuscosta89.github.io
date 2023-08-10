@@ -2,15 +2,18 @@
 import { css } from '/styled-system/css';
 // @ts-ignore
 import type { SystemStyleObject } from '../styled-system/types';
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ErrorMessage } from '@hookform/error-message';
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
+
+// @ts-ignore
+import Recaptcha from 'react-recaptcha-that-works';
+import Reaptcha from 'reaptcha';
 
 import Button from '@components/Button';
 import patternRings from '@assets/pattern-rings.svg';
@@ -131,7 +134,7 @@ const contactSchema = z
 
 type ContactSchema = z.infer<typeof contactSchema>;
 
-const ContactForm = () => {
+function ContactForm() {
 	const {
 		register,
 		handleSubmit,
@@ -148,14 +151,18 @@ const ContactForm = () => {
 		resolver: zodResolver(contactSchema),
 	});
 
-	const recaptchaRef = useRef(null);
+	const [recaptchaRef, setRecaptchaRef] = useState(null);
+
+	const handleRecaptchaRef = (e: any) => {
+		setRecaptchaRef(e);
+	};
 
 	const onSubmit: SubmitHandler<ContactSchema> = (formData) => {
 		emailjs.send('viniciuscosta89_github', 'github_template', formData, 'e4Y2hmtYWpuxUQfHC').then(
 			(response) => {
 				reset();
 				// @ts-ignore
-				recaptchaRef.current?.reset();
+				recaptchaRef.reset();
 				console.log('SUCCESS!', response.status, response.text);
 			},
 			(error) => {
@@ -164,10 +171,8 @@ const ContactForm = () => {
 		);
 	};
 
-	const recaptchaOnChange = (captchaCodeResponse: string | null) => {
-		if (!captchaCodeResponse) return;
-		setValue('g-recaptcha-response', captchaCodeResponse);
-		return captchaCodeResponse;
+	const recaptchaOnChange = (token: string) => {
+		setValue('g-recaptcha-response', token);
 	};
 
 	return (
@@ -194,14 +199,28 @@ const ContactForm = () => {
 				<label htmlFor="email">Email:</label>
 				<input className={inputStyle} id="email" {...register('email')} placeholder="Email" />
 				{errors.email && (
-					<span className={errorIcon}>
+					<motion.span
+						className={errorIcon}
+						initial={{ opacity: 0, x: 32 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ type: 'spring' }}
+					>
 						<Icons.Exclamation />
-					</span>
+					</motion.span>
 				)}
 				<ErrorMessage
 					errors={errors}
 					name="email"
-					render={({ message }) => <p className={errorMessage}>{message}</p>}
+					render={({ message }) => (
+						<motion.p
+							className={errorMessage}
+							initial={{ opacity: 0, x: 32 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ type: 'spring' }}
+						>
+							{message}
+						</motion.p>
+					)}
 				/>
 			</fieldset>
 
@@ -216,7 +235,16 @@ const ContactForm = () => {
 				<ErrorMessage
 					errors={errors}
 					name="message"
-					render={({ message }) => <p className={errorMessage}>{message}</p>}
+					render={({ message }) => (
+						<motion.p
+							className={errorMessage}
+							initial={{ opacity: 0, x: 32 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ type: 'spring' }}
+						>
+							{message}
+						</motion.p>
+					)}
 				/>
 
 				<motion.img
@@ -224,7 +252,7 @@ const ContactForm = () => {
 					className={patternRingsStyle}
 					initial={{ opacity: 0, x: -32 }}
 					animate={{ opacity: 1, x: 0 }}
-					transition={{ type: 'spring' }}
+					transition={{ type: 'spring', delay: 1 }}
 				/>
 			</fieldset>
 
@@ -237,16 +265,25 @@ const ContactForm = () => {
 					position: 'relative',
 				})}
 			>
-				<ReCAPTCHA
-					ref={recaptchaRef}
+				<Reaptcha
 					sitekey={import.meta.env.PUBLIC_RECAPTCHA_KEY}
-					onChange={recaptchaOnChange}
+					ref={(e) => handleRecaptchaRef(e)}
+					onVerify={recaptchaOnChange}
 					theme="dark"
 				/>
 				<ErrorMessage
 					errors={errors}
 					name="g-recaptcha-response"
-					render={({ message }) => <p className={errorMessage}>{message}</p>}
+					render={({ message }) => (
+						<motion.p
+							className={errorMessage}
+							initial={{ opacity: 0, x: 32 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ type: 'spring' }}
+						>
+							{message}
+						</motion.p>
+					)}
 				/>
 			</div>
 
@@ -257,10 +294,19 @@ const ContactForm = () => {
 				})}
 				disabled={!isDirty}
 			>
-				{isSubmitSuccessful ? 'Message sent!' : isSubmitting ? 'Submitting...' : 'Send message'}
+				<AnimatePresence>
+					<motion.span
+						initial={{ opacity: 0, y: -32 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 32 }}
+						transition={{ type: 'spring' }}
+					>
+						{isSubmitSuccessful ? 'Message sent!' : isSubmitting ? 'Submitting...' : 'Send message'}
+					</motion.span>
+				</AnimatePresence>
 			</Button>
 		</motion.form>
 	);
-};
+}
 
 export default ContactForm;

@@ -77,8 +77,8 @@ export default function Link({
 			{...rest}
 			href={url}
 			target={target}
-			initial={{ opacity: 0, y: positionY, x: positionX }}
-			animate={{ opacity: 1, y: 0, x: 0 }}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
 			transition={{ type: 'spring', delay: delay }}
 		>
 			{children}
