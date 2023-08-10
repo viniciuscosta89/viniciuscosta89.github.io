@@ -10,9 +10,6 @@ import type { SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ErrorMessage } from '@hookform/error-message';
 import emailjs from '@emailjs/browser';
-
-// @ts-ignore
-import Recaptcha from 'react-recaptcha-that-works';
 import Reaptcha from 'reaptcha';
 
 import Button from '@components/Button';
