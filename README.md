@@ -14,7 +14,6 @@ This is a solution to the [Single-page developer portfolio challenge on Frontend
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -30,20 +29,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile](./screenshot-mobile.jpg)
+![Desktop](./screenshot-desktop.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/single-page-frontend-developer-portfolio-astro-react-and-pandacss-4V1qeTfghy](https://www.frontendmentor.io/solutions/single-page-frontend-developer-portfolio-astro-react-and-pandacss-4V1qeTfghy)
+- Live Site URL: [https://viniciuscosta89-github-io.vercel.app](https://viniciuscosta89-github-io.vercel.app)
 
 ## My process
 
@@ -54,61 +46,31 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
+- [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
+- [Astro](https://astro.build) - Astro is the all-in-one web framework designed for speed.
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Vite](https://vitejs.dev) - Frontend Tooling
+- [Panda CSS](https://panda-css.com) - CSS-in-JS with build time generated styles, RSC compatible, multi-variant support, and best-in-class developer experience
+- [Typescript](https://www.typescriptlang.org) - JavaScript with syntax for types
+- [Zod](https://zod.dev) - TypeScript-first schema validation with static type inference
+- [React Hook Form](https://www.react-hook-form.com) - Performant, flexible and extensible forms with easy-to-use validation
+- [Framer Motion](https://www.framer.com/motion/) - A production-ready motion library for React
+- [reaptcha](https://github.com/sarneeh/reaptcha) - Google reCAPTCHA v2 for React
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-	color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-	console.log('🎉');
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+It was my first time developing with Panda CSS. Since Stitches isn't maintained anymore and styled-components doesn't work properly with Astro, I need an alternative for the CSS-in-JS approach.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I like to use Composition Pattern for my components since some weeks ago. It's a good approach to avoid "prop drilling". I want to dive deeper into the composition pattern. And take a look if Panda CSS is the better solution for CSS-in-JS to work with Astro.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- Documentations from React, Astro, Panda CSS, Vite, Zod, React Hoof Form, Framer Motion and reaptcha.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Vinicius Costa](https://viniciuscosta89-github-io.vercel.app)
+- GitHub - [https://github.com/viniciuscosta89](https://github.com/viniciuscosta89)
+- Frontend Mentor - [@viniciuscosta89](https://www.frontendmentor.io/profile/viniciuscosta89)
