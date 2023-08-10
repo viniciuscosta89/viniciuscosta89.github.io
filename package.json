@@ -33,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@pandacss/dev": "^0.8.0",
+		"@types/react-google-recaptcha": "^2.1.5",
 		"vite": "^4.4.9"
 	}
 }

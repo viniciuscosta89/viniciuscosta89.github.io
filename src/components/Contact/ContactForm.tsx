@@ -10,7 +10,6 @@ import type { SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ErrorMessage } from '@hookform/error-message';
 import emailjs from '@emailjs/browser';
-// @ts-ignore
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import Button from '@components/Button';
@@ -165,7 +164,7 @@ const ContactForm = () => {
 		);
 	};
 
-	const recaptchaOnChange = (captchaCodeResponse: string) => {
+	const recaptchaOnChange = (captchaCodeResponse: string | null) => {
 		if (!captchaCodeResponse) return;
 		setValue('g-recaptcha-response', captchaCodeResponse);
 		return captchaCodeResponse;
