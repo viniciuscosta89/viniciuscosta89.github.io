@@ -30,9 +30,18 @@ const footerGrid = css({
 })
 
 const footerTitleStyle = css({
-	fontSize: '3',
-	fontWeight: 'bold',
-	letterSpacing: '-0.02081rem',	
+	display: 'flex',
+	alignItems: 'center',
+	fontSize: '3',	
+	letterSpacing: '-0.02081rem',
+
+	'& span': {
+			fontWeight: 'light',
+		},
+
+		'& strong': {
+			fontWeight: 'bold',
+		},
 });
 
 const socialNetworksStyle = css({
@@ -59,7 +68,10 @@ type Props = Record<string, never>;
 <footer class={footerStyle}>
 	<Container>
 		<div class={footerGrid}>
-			<h2 class={footerTitleStyle}>viniciuscosta</h2>
+			<div class={footerTitleStyle}>
+				<span>vinicius</span>
+				<strong>costa</strong>
+			</div>
 		
 			<ul class={socialNetworksStyle}>
 				{

@@ -99,6 +99,8 @@ const HeaderGrid = styled('div', {
 
 const HeaderTitle = styled('div', {
 	base: {
+		display: 'flex',
+		alignItems: 'center',
 		fontSize: '3',
 		letterSpacing: '-0.02081rem',
 
