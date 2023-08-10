@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import Container from '@components/Container';
 import profileDesktop from '@assets/image-profile-desktop.webp';
+import profileReal from '@assets/image-profile-desktop-hover.webp';
 import profileTablet from '@assets/image-profile-tablet.webp';
 import profileMobile from '@assets/image-profile-mobile.webp';
 import { socialNetworks } from '@data/social-networks';
@@ -64,7 +65,7 @@ const HeaderStyled = styled(motion.header, {
 				base: 0,
 				lg: '-850%',
 			},
-			zIndex: '-1',
+			zIndex: '6',
 			width: '129px',
 			height: '129px',
 		},
@@ -94,6 +95,8 @@ const HeaderGrid = styled('div', {
 			base: '3rem',
 			md: 0,
 		},
+		position: 'relative',
+		zIndex: '10',
 	},
 });
 
@@ -156,7 +159,57 @@ const ProfileImage = styled('picture', {
 			md: '20.125rem',
 			lg: '27.8125rem',
 		},
-		zIndex: '-1',
+		zIndex: {
+			base: '-1',
+			lg: '5',
+		},
+		transition: 'ease all 1.5s',
+		perspective: '1200px',
+		transformStyle: 'preserve-3d',
+
+		_hover: {
+			transform: {
+				lg: 'rotateX(0deg) rotateY(-180deg)',
+			},
+		},
+
+		'& > *': {
+			transformStyle: 'preserve-3d',
+		},
+	},
+});
+
+const ProfileImageReal = styled('div', {
+	base: {
+		display: {
+			base: 'none',
+			lg: 'block',
+		},
+		position: {
+			base: 'relative',
+			md: 'absolute',
+		},
+		right: {
+			base: 0,
+			md: '-2rem',
+			lg: 0,
+		},
+		top: 0,
+		marginBlockStart: {
+			base: '-7.5rem',
+			md: '0',
+		},
+		mx: 'auto',
+		maxWidth: {
+			base: '10.88794rem',
+			md: '20.125rem',
+			lg: '27.8125rem',
+		},
+		zIndex: '5',
+
+		transformStyle: 'preserve-3d',
+		transform: 'translateZ(-1px)',
+		transition: 'ease all 1.5s',
 	},
 });
 
@@ -185,6 +238,10 @@ function Header() {
 					<source srcSet={profileDesktop} media="(min-width: 1140px)" />
 					<source srcSet={profileTablet} media="(min-width: 768px)" />
 					<img src={profileMobile} alt="AI rendered Vinicius Costa's image " />
+
+					<ProfileImageReal>
+						<img src={profileReal} alt="My real picture" />
+					</ProfileImageReal>
 				</ProfileImage>
 			</Container>
 		</HeaderStyled>
