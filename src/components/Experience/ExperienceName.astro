@@ -1,0 +1,25 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+
+const experienceNameStyle = css({
+	color: 'white',
+	fontSize: {
+		base: '5',
+		lg: ''
+	},
+	fontWeight: 'bold',
+	letterSpacing: {
+		base: '-0.0625rem',
+		lg: '-0.09375rem'
+	},
+	lineHeight: {
+		base: '1.25',
+		lg: '1.16'
+	}
+})
+
+const { name } = Astro.props;
+---
+
+<h3 class={experienceNameStyle}>{ name }</h3>

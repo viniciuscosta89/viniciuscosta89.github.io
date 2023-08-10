@@ -1,0 +1,17 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+
+const contactRootStyle = css({
+	bg: 'black.700',
+	paddingBlockStart: '3.75rem',
+	px: {
+		md: '8rem'
+	},
+})
+---
+
+<section id="contact" class={contactRootStyle}>
+	<slot />
+	
+</section>

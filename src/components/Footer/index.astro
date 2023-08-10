@@ -1,0 +1,77 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+import Container from '@components/Container';
+import { socialNetworks } from '@data/social-networks';
+
+const footerStyle = css({
+	bg: 'black.700',	
+	py: {
+		base: '2.44rem 3.75rem',
+		md: '2rem'
+	},
+})
+
+const footerGrid = css({
+	display: 'grid',
+	gridTemplateColumns: {
+		base: '1fr',
+		md: 'repeat(2, auto)'
+	},
+	justifyContent: {
+		base: 'center',
+		md: 'space-between'
+	},
+	gap: '1.25rem',
+	textAlign: {
+		base: 'center',
+		md: 'left'
+	}
+})
+
+const footerTitleStyle = css({
+	fontSize: '3',
+	fontWeight: 'bold',
+	letterSpacing: '-0.02081rem',	
+});
+
+const socialNetworksStyle = css({
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	gap: '2rem',
+	position: 'relative',
+
+	'& a': {		
+		display: 'block',
+		transition: 'all 0.3s ease-in-out',
+
+		_hover: {
+			color: 'red.300',
+			transform: 'scale(1.15)'
+		}
+	}
+});
+
+type Props = Record<string, never>;
+---
+
+<footer class={footerStyle}>
+	<Container>
+		<div class={footerGrid}>
+			<h2 class={footerTitleStyle}>viniciuscosta</h2>
+		
+			<ul class={socialNetworksStyle}>
+				{
+					socialNetworks.map(({ url, label, logo: Logo }) => (
+						<li>
+							<a href={url} title={`My ${label} profile`}>						
+								<Logo />
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</Container>
+</footer>

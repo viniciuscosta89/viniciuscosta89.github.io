@@ -1,0 +1,55 @@
+---
+import '../styles/index.css';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/space-grotesk/700.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Front-end Dev Vinicius Costa's page" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="robots" content="index,follow,noodp" />
+		<meta name="googlebot" content="index,follow" />
+		<meta name="url" content="http://viniciuscosta89.github.io/" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon/favicon-16.png" sizes="16x16" type="image/png" />
+		<link rel="icon" href="/favicon/favicon-32.png" sizes="32x32" type="image/png"/ >
+		<link rel="icon" href="/favicon/favicon-48.png" sizes="48x48" type="image/png" />
+		<link rel="icon" href="/favicon/favicon-62.png" sizes="62x62" type="image/png" />
+		<link rel="icon" href="/favicon/favicon-192.png" sizes="192x192" type="image/png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="canonical" href="http://viniciuscosta89.github.io/">
+
+		<meta name="msapplication-TileColor" content="#141414">
+		<meta name="msapplication-TileImage" content="images/favicon/favicon-144.png" />
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#141414" />
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#141414" />
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!--Facebook Open Graph -->
+		<meta property="og:url" content="http://viniciuscosta89.github.io">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Vinicius Costa | Front-End Dev">
+		<meta property="og:image" content="http://viniciuscosta89.github.io/images/favicon/favicon-192.png">
+		<meta property="og:description" content="Vinicius Costa's Website @ GitHub Pages">
+		<meta property="og:site_name" content="Vinicius Costa | Front-End Dev">
+		<meta property="og:locale" content="en_US">
+		<meta property="article:author" content="Vinicius Costa">
+	</head>
+	<body>		
+		<slot />
+	</body>
+</html>

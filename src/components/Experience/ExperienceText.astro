@@ -1,0 +1,21 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+
+const experienceTextStyle = css({
+	color: 'black.100',
+	fontSize: {
+		base: '-1',
+		lg: '0'
+	},
+	fontWeight: 'regular',	
+	lineHeight: {
+		base: '1.62',
+		lg: '1.55'
+	}
+})
+
+const { text } = Astro.props;
+---
+
+<p class={experienceTextStyle}>{ text }</p>

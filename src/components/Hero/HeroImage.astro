@@ -1,0 +1,16 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+
+const heroImageStyle = css({
+	base: {
+		position: 'absolute',
+		top: 0,
+		right: 0
+	}
+})
+
+const { src, alt } = Astro.props;
+---
+
+<img class={heroImageStyle} src={src} alt={alt} />

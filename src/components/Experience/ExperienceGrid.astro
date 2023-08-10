@@ -1,0 +1,26 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+
+const experienceGridStyle = css({
+	display: 'grid',
+	gap: {
+		base: '1.5rem',
+		md: '3.25rem',
+		lg: '3.62rem'
+	},
+	gridTemplateColumns: {
+		base: '1fr',
+		md: 'repeat(2, 1fr)',
+		lg: 'repeat(3, 1fr)'
+	},
+	py: {
+		base: '2.5rem',
+		md: '3.25rem 2.25rem'
+	}
+})
+---
+
+<div class={experienceGridStyle}>
+	<slot />
+</div>

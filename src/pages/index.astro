@@ -1,0 +1,168 @@
+---
+// @ts-ignore
+import { css } from '/styled-system/css';
+// @ts-ignore
+import { styled } from '/styled-system/jsx';
+import { motion } from 'framer-motion';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container';
+import { Hero } from '@components/Hero';
+import Header from '@components/Header';
+import Link from '@components/Link';
+import Divider from '@components/Divider';
+import SectionTitle from '@components/SectionTitle';
+import { Experience } from '@components/Experience';
+import { Project } from '@components/Project';
+import { Contact } from '@components/Contact';
+import Footer from '@components/Footer/index.astro';
+import patternRings from '@assets/pattern-rings.svg';
+import { projects } from '../data/projects';
+import { experienceItems } from '../data/experience';
+
+const patternRingsStyle = css({
+	position: 'relative',
+	display: {
+		base: 'block'
+	},	
+	gridArea: '1/-1',
+	maxWidth: 'unset',
+	right: '-35%',
+	zIndex: '-1',
+})
+
+export const prerender = false;
+---
+
+<Layout title="Vinicius Costa - Front-end Dev">
+	<>		
+		<Header client:load />
+		<main>
+			<Hero.Root>				
+				<Hero.Title name="Vinicius Costa" client:load />
+				<Hero.Text client:load>
+					I'm a Brazilian front-end developer passionate about building responsive and accessible web apps and websites.
+				</Hero.Text>
+	
+				<Link url="#contact" client:load positionX={-32} delay={1.5}>Contact Me</Link>
+			</Hero.Root>
+	
+			<Container>
+				<Divider delay={1.5} client:load />
+			</Container>
+	
+			<Experience.Root>
+				<Container>
+					<Experience.Grid>
+						{ experienceItems.map((experience, i) => (
+							<Experience.Item delay={0.3 * i} client:visible>
+								<Experience.Name name={experience.name} />
+								<Experience.Text text={experience.text} />
+							</Experience.Item>
+						))}
+					</Experience.Grid>
+				</Container>
+			</Experience.Root>
+	
+			<div class={css({ 
+				position: 'relative', 
+				overflowX: 'hidden', 
+				display: {
+					base: 'grid',
+				},
+				alignItems: 'center',
+				my: {
+					base: '-6rem',
+					md: '-6.5rem -2.5rem',
+					lg: '-6.5rem 0'
+				},
+	
+				'& hr': {
+					display: {
+						md: 'none'
+					}
+				},
+	
+				'& img': {				
+					right: {
+						base: 'inherit',
+						md: '-75%'
+					}
+				}
+			})}>
+				<motion.img 
+					src={patternRings} 
+					className={patternRingsStyle} 
+					initial={{ opacity: 0, x: 32 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ type: 'spring' }}	
+					client:visible				
+				/>			
+				<div class={css({ gridArea: '1/-1' })}>
+					<Container>
+						<Divider client:load />
+					</Container>
+				</div>
+			</div>	
+	
+			<Project.Root>
+				<Container>
+					<div class={css({ 
+						display: 'flex', 
+						justifyContent: 'space-between', 
+						alignItems: 'center', 
+						marginBlockEnd: { base: '2.5rem', lg: '5rem'} })}
+					>
+						<SectionTitle text="Projects" client:visible />
+						<Link url="#contact" positionX={32} client:visible>Contact Me</Link>
+					</div>
+	
+					<Project.Grid>
+						{
+							projects.map((project, i) => (
+								<Project.Item delay={0.3 * i} client:visible>
+									<Project.Img imgs={{large: project.imgs.large, small: project.imgs.small}} alt={project.alt} />										
+	
+									<Project.Name name={project.name} />
+									<Project.Stack>
+										{ project.stack.map((s: string) => (
+											<span>{ s }</span>
+										))}
+									</Project.Stack>
+	
+									<Project.Actions>									
+										<Link url={project.live} target="_blank" client:visible>View Project</Link>
+										{ project.code && <Link url={project.code} target="_blank" client:visible>View Code</Link>	}																		
+									</Project.Actions>
+								</Project.Item>
+							))
+						}
+					</Project.Grid>
+				</Container>
+	
+			</Project.Root>
+	
+			<Contact.Root>
+				<Container>
+					<Contact.Grid>
+						<div>
+							<SectionTitle hasMarginBottom align="center" text="Contact" client:visible />
+							<Contact.Text client:visible>
+								I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
+							</Contact.Text>
+						</div>
+
+						<Contact.Form client:load />				
+					</Contact.Grid>
+				</Container>
+			</Contact.Root>
+	
+			<section class={css({ backgroundColor: 'black.700'})}>
+				<Container>
+					<Divider client:load />
+				</Container>
+			</section>
+		</main>
+
+		<Footer />
+	</>
+</Layout>
