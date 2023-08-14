@@ -1,14 +1,7 @@
-import type { ElementType } from 'react';
+import type { SocialNetworkTypes } from '@type/social-networks';
 import Icons from '@components/Icons/';
 
-interface SocialNetwork {
-	url: string;
-	logo: ElementType;
-	label: string;
-	alt: string;
-}
-
-export const socialNetworks: SocialNetwork[] = [
+export const socialNetworks: SocialNetworkTypes[] = [
 	{
 		url: 'https://www.frontendmentor.io/profile/viniciuscosta89',
 		logo: Icons.FrontendMentor,

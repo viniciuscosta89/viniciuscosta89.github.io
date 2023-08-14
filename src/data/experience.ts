@@ -1,7 +1,4 @@
-export interface ExperienceItemsType {
-	name: string;
-	text: string;
-}
+import type { ExperienceItemsType } from '@type/experience';
 
 export const experienceItems: ExperienceItemsType[] = [
 	{
