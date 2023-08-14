@@ -16,6 +16,8 @@ import Footer from '@components/Footer/index.astro';
 import patternRings from '@assets/pattern-rings.svg';
 import { projects } from '../data/projects';
 import { experienceItems } from '../data/experience';
+import Jobs from '@components/Jobs'
+import { jobs } from '@data/jobs';
 
 const patternRingsStyle = css({
 	position: 'relative',
@@ -39,7 +41,7 @@ const patternRingsStyle = css({
 					I'm a Brazilian front-end developer passionate about building responsive and accessible web apps and websites.
 				</Hero.Text>
 	
-				<Link url="#contact" client:load positionX={-32} delay={1.5}>Contact Me</Link>
+				<Link url="#contact" client:load delay={1.5}>Contact Me</Link>
 			</Hero.Root>
 	
 			<Container>
@@ -100,6 +102,8 @@ const patternRingsStyle = css({
 					</Container>
 				</div>
 			</div>	
+
+			<Jobs jobs={jobs} client:visible />
 	
 			<Project.Root>
 				<Container>
@@ -110,7 +114,7 @@ const patternRingsStyle = css({
 						marginBlockEnd: { base: '2.5rem', lg: '5rem'} })}
 					>
 						<SectionTitle text="Projects" client:visible />
-						<Link url="#contact" positionX={32} client:visible>Contact Me</Link>
+						<Link url="#contact" client:visible>Contact Me</Link>
 					</div>
 	
 					<Project.Grid>
@@ -163,3 +167,4 @@ const patternRingsStyle = css({
 		<Footer />
 	</>
 </Layout>
+@components/Jobs

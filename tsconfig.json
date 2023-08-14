@@ -9,7 +9,8 @@
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@assets/*": ["/assets/*"],
-			"@data/*": ["src/data/*"]
+			"@data/*": ["src/data/*"],
+			"@type/*": ["src/types/*"]
 		},
 		"types": ["vite/client"]
 	},

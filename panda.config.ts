@@ -193,6 +193,7 @@ export default defineConfig({
 			colors: {
 				primary: { value: '{colors.red.400}' },
 				bg: { value: '{colors.black.800}' },
+				bgGray: { value: '{colors.black.700}' },
 				text: { value: '{colors.white}' },
 				disabled: { value: '{colors.black.400}' },
 			},
