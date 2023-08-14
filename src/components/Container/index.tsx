@@ -45,14 +45,14 @@ const containerStyle = cva({
 	},
 });
 
-interface Props {
+interface ContainerProps {
 	align?: string;
 	bgColor?: string;
 	children: ReactNode;
 	overflow?: string;
 }
 
-function Container({ align, bgColor, children, overflow }: Props) {
+function Container({ align, bgColor, children, overflow }: ContainerProps) {
 	return <div className={containerStyle({ align: align, bgColor: bgColor, overflow: overflow })}>{children}</div>;
 }
 
