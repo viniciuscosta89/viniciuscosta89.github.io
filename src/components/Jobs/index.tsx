@@ -6,6 +6,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import { css } from '/styled-system/css';
 import Container from '@components/Container';
 import type { JobType } from '@type/jobs';
+import Icons from '@components/Icons';
 
 const jobsStyle = css({
 	position: 'relative',
@@ -67,15 +68,8 @@ const jobActivities = css({
 	listStylePosition: 'inside',
 });
 
-const jobIconStyle = css({
+const jobIconContainerStyle = css({
 	bg: 'black.700',
-	display: 'grid',
-	placeContent: 'center',
-	fontFamily: 'Material Icons, sans-serif',
-
-	'& .material-symbols-outlined': {
-		fontSize: '3 !important',
-	},
 });
 
 interface JobsProps {
@@ -97,8 +91,8 @@ function Jobs({ jobs }: JobsProps) {
 							}}
 							contentArrowStyle={{ borderRightColor: 'var(--colors-bg-gray)' }}
 							date={`${job.when.from} - ${job.when.to}`}
-							icon={<span className="material-symbols-outlined">work</span>}
-							iconClassName={jobIconStyle}
+							icon={<Icons.Work />}
+							iconClassName={jobIconContainerStyle}
 						>
 							<a className={jobName} href={job.url} target="_blank">
 								{job.name}
