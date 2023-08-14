@@ -52,23 +52,11 @@ interface LinkProps {
 	children: ReactNode | string;
 	url?: string;
 	target?: '_blank' | '_self';
-	positionX?: number;
-	positionY?: number;
 	delay?: number;
 	handleClick?: () => void;
 }
 
-export default function Link({
-	children,
-	url = '',
-	handleClick,
-	className,
-	target,
-	positionX = 0,
-	positionY = 0,
-	delay,
-	...rest
-}: LinkProps) {
+export default function Link({ children, url = '', handleClick, className, target, delay, ...rest }: LinkProps) {
 	const rootClassName = cx(buttonStyle, className);
 
 	return (
