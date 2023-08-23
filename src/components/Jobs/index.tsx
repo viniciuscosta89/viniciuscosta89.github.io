@@ -24,7 +24,10 @@ const jobsTimeline = css({
 
 	'&.vertical-timeline': {
 		'&::before': {
-			left: '1.5rem !important',
+			transform: {
+				base: 'translateX(8px)',
+				lg: 'translateX(0)',
+			},
 		},
 	},
 });
