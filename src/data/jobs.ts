@@ -1,6 +1,18 @@
 import type { JobType } from '@type/jobs';
+import wefitIcon from '@assets/wefit-logo.png';
 
 export const jobs: JobType[] = [
+	{
+		name: 'WeFit',
+		url: 'https://wefit.com.br',
+		role: 'Front-end Developer/Tech Designer',
+		when: {
+			from: 'Ago 2023',
+			to: 'Current',
+		},
+		icon: wefitIcon,
+		activities: ['In development ⚠️'],
+	},
 	{
 		name: 'Valtech',
 		url: 'https://valtech.com',

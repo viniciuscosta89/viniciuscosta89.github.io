@@ -66,10 +66,32 @@ const jobActivities = css({
 	gap: '0.5rem',
 	listStyle: 'disc',
 	listStylePosition: 'inside',
+
+	'& li': {
+		'&::marker': {
+			color: 'var(--colors-primary)',
+		},
+	},
+});
+
+const jobDateStyle = css({
+	fontSize: '-1 !important',
+	py: '1rem 0 !important',
 });
 
 const jobIconContainerStyle = css({
 	bg: 'black.700',
+
+	'& img': {
+		display: 'block',
+		width: '24px',
+		height: '24px',
+		position: 'relative',
+		left: '50%',
+		top: '50%',
+		marginLeft: '-12px',
+		marginTop: '-12px',
+	},
 });
 
 interface JobsProps {
@@ -91,7 +113,8 @@ function Jobs({ jobs }: JobsProps) {
 							}}
 							contentArrowStyle={{ borderRightColor: 'var(--colors-bg-gray)' }}
 							date={`${job.when.from} - ${job.when.to}`}
-							icon={<Icons.Work />}
+							dateClassName={jobDateStyle}
+							icon={job.icon ? <img src={job.icon} alt={`${job.name} logo`} /> : <Icons.Work />}
 							iconClassName={jobIconContainerStyle}
 						>
 							<a className={jobName} href={job.url} target="_blank">
