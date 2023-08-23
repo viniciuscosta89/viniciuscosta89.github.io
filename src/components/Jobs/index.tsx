@@ -17,6 +17,18 @@ const jobsStyle = css({
 	},
 });
 
+const jobsTimeline = css({
+	px: '0.5rem !important',
+	overflowX: 'hidden',
+	width: '100% !important',
+
+	'&.vertical-timeline': {
+		'&::before': {
+			left: '1.5rem !important',
+		},
+	},
+});
+
 const jobName = css({
 	color: 'primary',
 	fontSize: '3',
@@ -102,7 +114,7 @@ function Jobs({ jobs }: JobsProps) {
 	return (
 		<section id="jobs" className={jobsStyle}>
 			<Container>
-				<VerticalTimeline lineColor="var(--colors-primary)">
+				<VerticalTimeline lineColor="var(--colors-primary)" className={jobsTimeline}>
 					{jobs.map((job, jobIndex) => (
 						<VerticalTimelineElement
 							key={jobIndex}
