@@ -3,27 +3,27 @@
 import { css } from '/styled-system/css';
 
 const projectStackStyle = css({
-	color: 'black.100',
-	display: 'flex',	
-	alignContent: 'flex-start',
-	flexWrap: 'wrap',
-	gap: '0 1.125rem',
-	fontSize: '0',
-	fontWeight: 'regular',	
-	lineHeight: '1.55',
-	marginBlockEnd: {
-		base: '1.25rem',
-		lg: 0
-	},
-	minHeight: {
-		md: '7rem',
-		lg: 'auto'
-	},
-	textTransform: 'uppercase',
-	gridArea: { lg: 'stack' }
-})
+  color: 'black.100',
+  display: 'flex',
+  alignContent: 'flex-start',
+  flexWrap: 'wrap',
+  gap: '0 1.125rem',
+  fontSize: '0',
+  fontWeight: 'regular',
+  lineHeight: '1.55',
+  marginBlockEnd: {
+    base: '1.25rem',
+    lg: 0,
+  },
+  minHeight: {
+    md: '7rem',
+    lg: 'auto',
+  },
+  textTransform: 'uppercase',
+  gridArea: { lg: 'stack' },
+});
 ---
 
 <div class={projectStackStyle}>
-	<slot />
+  <slot />
 </div>

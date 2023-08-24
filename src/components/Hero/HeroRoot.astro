@@ -3,18 +3,18 @@
 import { css } from '/styled-system/css';
 import Container from '@components/Container';
 
-const heroRootStyle = css({	
-	marginBlockEnd: {
-		base: '5rem',
-		md: '3.75rem',
-		lg: '8.70rem'
-	},
-	position: 'relative',		
-})
+const heroRootStyle = css({
+  marginBlockEnd: {
+    base: '5rem',
+    md: '3.75rem',
+    lg: '8.70rem',
+  },
+  position: 'relative',
+});
 ---
 
 <div id="hero" class={heroRootStyle}>
-	<Container align="mobileCenter">
-		<slot />		
-	</Container>
+  <Container align="mobileCenter">
+    <slot />
+  </Container>
 </div>

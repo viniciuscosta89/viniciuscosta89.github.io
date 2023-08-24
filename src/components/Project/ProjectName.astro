@@ -3,16 +3,16 @@
 import { css } from '/styled-system/css';
 
 const projectNameStyle = css({
-	color: 'white',
-	fontSize: '2',
-	fontWeight: 'bold',	
-	lineHeight: '1.33',
-	my: '1.5rem 0.5rem',
-	textTransform: 'uppercase',
-	gridArea: { lg: 'name' }
-})
+  color: 'white',
+  fontSize: '2',
+  fontWeight: 'bold',
+  lineHeight: '1.33',
+  my: '1.5rem 0.5rem',
+  textTransform: 'uppercase',
+  gridArea: { lg: 'name' },
+});
 
 const { name } = Astro.props;
 ---
 
-<h3 class={projectNameStyle}>{ name }</h3>
+<h3 class={projectNameStyle}>{name}</h3>

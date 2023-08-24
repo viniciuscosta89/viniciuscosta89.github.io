@@ -5,9 +5,9 @@ import ExperienceRoot from './ExperienceRoot.astro';
 import ExperienceText from './ExperienceText.astro';
 
 export const Experience = {
-	Root: ExperienceRoot,
-	Grid: ExperienceGrid,
-	Item: ExperienceItem,
-	Name: ExperienceName,
-	Text: ExperienceText,
+  Root: ExperienceRoot,
+  Grid: ExperienceGrid,
+  Item: ExperienceItem,
+  Name: ExperienceName,
+  Text: ExperienceText,
 };

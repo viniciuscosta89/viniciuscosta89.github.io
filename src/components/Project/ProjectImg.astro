@@ -3,25 +3,25 @@
 import { css } from '/styled-system/css';
 
 interface Props {
-	imgs: {
-		large: string;
-		small: string;
-	}
-	alt: string;
+  imgs: {
+    large: string;
+    small: string;
+  };
+  alt: string;
 }
 
-const projectImgStyle = css({ 
-	display: 'block', 	
-	maxWidth: '100%', 
-	gridArea: { 
-		lg: 'img' 
-	} 
-})
+const projectImgStyle = css({
+  display: 'block',
+  maxWidth: '100%',
+  gridArea: {
+    lg: 'img',
+  },
+});
 
 const { imgs, alt } = Astro.props;
 ---
 
 <picture class={projectImgStyle}>
-	<source srcset={`/assets/${imgs.large}`} media="(min-width: 1140px)" />
-	<img  src={`/assets/${imgs.small}`} alt={alt} loading="lazy" />
+  <source srcset={`/assets/${imgs.large}`} media="(min-width: 1140px)" />
+  <img src={`/assets/${imgs.small}`} alt={alt} loading="lazy" />
 </picture>

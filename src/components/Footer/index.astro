@@ -5,85 +5,85 @@ import Container from '@components/Container';
 import { socialNetworks } from '@data/social-networks';
 
 const footerStyle = css({
-	bg: 'black.700',	
-	py: {
-		base: '2.44rem 3.75rem',
-		md: '2rem'
-	},
-})
+  bg: 'black.700',
+  py: {
+    base: '2.44rem 3.75rem',
+    md: '2rem',
+  },
+});
 
 const footerGrid = css({
-	display: 'grid',
-	gridTemplateColumns: {
-		base: '1fr',
-		md: 'repeat(2, auto)'
-	},
-	justifyContent: {
-		base: 'center',
-		md: 'space-between'
-	},
-	gap: '1.25rem',
-	textAlign: {
-		base: 'center',
-		md: 'left'
-	}
-})
+  display: 'grid',
+  gridTemplateColumns: {
+    base: '1fr',
+    md: 'repeat(2, auto)',
+  },
+  justifyContent: {
+    base: 'center',
+    md: 'space-between',
+  },
+  gap: '1.25rem',
+  textAlign: {
+    base: 'center',
+    md: 'left',
+  },
+});
 
 const footerTitleStyle = css({
-	display: 'flex',
-	alignItems: 'center',
-	fontSize: '3',	
-	letterSpacing: '-0.02081rem',
+  display: 'flex',
+  alignItems: 'center',
+  fontSize: '3',
+  letterSpacing: '-0.02081rem',
 
-	'& span': {
-			fontWeight: 'light',
-		},
+  '& span': {
+    fontWeight: 'light',
+  },
 
-		'& strong': {
-			fontWeight: 'bold',
-		},
+  '& strong': {
+    fontWeight: 'bold',
+  },
 });
 
 const socialNetworksStyle = css({
-	display: 'flex',
-	alignItems: 'center',
-	justifyContent: 'center',
-	gap: '2rem',
-	position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '2rem',
+  position: 'relative',
 
-	'& a': {		
-		display: 'block',
-		transition: 'all 0.3s ease-in-out',
+  '& a': {
+    display: 'block',
+    transition: 'all 0.3s ease-in-out',
 
-		_hover: {
-			color: 'red.300',
-			transform: 'scale(1.15)'
-		}
-	}
+    _hover: {
+      color: 'red.300',
+      transform: 'scale(1.15)',
+    },
+  },
 });
 
 type Props = Record<string, never>;
 ---
 
 <footer class={footerStyle}>
-	<Container>
-		<div class={footerGrid}>
-			<div class={footerTitleStyle}>
-				<span>vinicius</span>
-				<strong>costa</strong>
-			</div>
-		
-			<ul class={socialNetworksStyle}>
-				{
-					socialNetworks.map(({ url, label, logo: Logo }) => (
-						<li>
-							<a href={url} title={`My ${label} profile`}>						
-								<Logo />
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</div>
-	</Container>
+  <Container>
+    <div class={footerGrid}>
+      <div class={footerTitleStyle}>
+        <span>vinicius</span>
+        <strong>costa</strong>
+      </div>
+
+      <ul class={socialNetworksStyle}>
+        {
+          socialNetworks.map(({ url, label, logo: Logo }) => (
+            <li>
+              <a href={url} title={`My ${label} profile`}>
+                <Logo />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
 </footer>

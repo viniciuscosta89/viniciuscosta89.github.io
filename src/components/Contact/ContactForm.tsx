@@ -17,294 +17,310 @@ import patternRings from '@assets/pattern-rings.svg';
 import Icons from '@components/Icons';
 
 const contactFormStyle = css({
-	bg: 'black.700',
-	display: 'grid',
-	gap: '2rem',
-	paddingBlockEnd: '5.44rem',
+  bg: 'black.700',
+  display: 'grid',
+  gap: '2rem',
+  paddingBlockEnd: '5.44rem',
 
-	'& label': {
-		display: 'none',
-	},
+  '& label': {
+    display: 'none',
+  },
 });
 
 const inputStyle: SystemStyleObject = css({
-	bg: 'transparent',
-	borderBottomColor: 'white',
-	borderBottomWidth: '0.0625rem',
-	borderBottomStyle: 'solid',
-	color: 'white',
-	fontSize: '-1',
-	gridArea: 'input',
-	p: '1rem 1.5rem',
-	textTransform: 'uppercase',
-	transition: 'all 0.3s ease-in-out',
-	width: '100%',
+  bg: 'transparent',
+  borderBottomColor: 'white',
+  borderBottomWidth: '0.0625rem',
+  borderBottomStyle: 'solid',
+  color: 'white',
+  fontSize: '-1',
+  gridArea: 'input',
+  p: '1rem 1.5rem',
+  textTransform: 'uppercase',
+  transition: 'all 0.3s ease-in-out',
+  width: '100%',
 
-	_focus: {
-		bg: 'black.600',
-		borderColor: 'red.300',
-		outlineOffset: '2px',
-	},
+  _focus: {
+    bg: 'black.600',
+    borderColor: 'red.300',
+    outlineOffset: '2px',
+  },
 
-	_placeholder: {
-		letterSpacing: '-0.01388rem',
-		opacity: 0.5,
-	},
+  _placeholder: {
+    letterSpacing: '-0.01388rem',
+    opacity: 0.5,
+  },
 });
 
 const contactFieldsetStyle = css({
-	display: 'grid',
-	gridTemplateAreas: `
+  display: 'grid',
+  gridTemplateAreas: `
 		"input"
 		"errors"
 	`,
-	alignItems: 'center',
-	gap: '0.5rem',
-	position: 'relative',
-	zIndex: '0',
+  alignItems: 'center',
+  gap: '0.5rem',
+  position: 'relative',
+  zIndex: '0',
 });
 
 const contactFieldsetTextareaStyle = css({
-	display: 'grid',
-	gridTemplateAreas: `
+  display: 'grid',
+  gridTemplateAreas: `
 		"input"
 		"errors"
 	`,
-	alignItems: 'flex-start',
-	gap: '0.5rem',
-	position: 'relative',
-	zIndex: '0',
+  alignItems: 'flex-start',
+  gap: '0.5rem',
+  position: 'relative',
+  zIndex: '0',
 });
 
 const errorMessage = css({
-	color: 'red.400',
-	fontSize: '-2',
-	gridArea: 'errors',
-	justifySelf: 'flex-end',
+  color: 'red.400',
+  fontSize: '-2',
+  gridArea: 'errors',
+  justifySelf: 'flex-end',
 });
 
 const errorIcon = css({
-	color: 'red.400',
-	gridArea: 'input',
-	justifySelf: 'flex-end',
+  color: 'red.400',
+  gridArea: 'input',
+  justifySelf: 'flex-end',
 });
 
 const errorMessageIcon = css({
-	color: 'red.400',
-	gridArea: 'input',
-	justifySelf: 'flex-end',
-	py: '1rem',
+  color: 'red.400',
+  gridArea: 'input',
+  justifySelf: 'flex-end',
+  py: '1rem',
 });
 
 const patternRingsStyle = css({
-	position: 'absolute',
-	display: {
-		base: 'block',
-		md: 'none',
-		lg: 'block',
-	},
-	maxWidth: 'unset',
-	left: {
-		base: '-100%',
-		lg: '-225%',
-	},
-	bottom: {
-		base: '-50%',
-	},
-	zIndex: '-1',
+  position: 'absolute',
+  display: {
+    base: 'block',
+    md: 'none',
+    lg: 'block',
+  },
+  maxWidth: 'unset',
+  left: {
+    base: '-100%',
+    lg: '-225%',
+  },
+  bottom: {
+    base: '-50%',
+  },
+  zIndex: '-1',
 });
 
 const contactSchema = z
-	.object({
-		name: z.string().min(1, { message: 'Name is required' }),
-		email: z
-			.string()
-			.min(1, { message: 'Email is required' })
-			.email({
-				message: 'Sorry, invalid format here',
-			})
-			.trim(),
-		message: z.string().min(4, { message: ' Message is required' }),
-		'g-recaptcha-response': z.string().min(1, { message: 'You must validate the reCAPTCHA' }),
-	})
-	.required();
+  .object({
+    name: z.string().min(1, { message: 'Name is required' }),
+    email: z
+      .string()
+      .min(1, { message: 'Email is required' })
+      .email({
+        message: 'Sorry, invalid format here',
+      })
+      .trim(),
+    message: z.string().min(4, { message: ' Message is required' }),
+    'g-recaptcha-response': z.string().min(1, { message: 'You must validate the reCAPTCHA' }),
+  })
+  .required();
 
 type ContactSchema = z.infer<typeof contactSchema>;
 
 function ContactForm() {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors, isDirty, isSubmitting, isSubmitSuccessful },
-		reset,
-		setValue,
-	} = useForm<ContactSchema>({
-		defaultValues: {
-			name: '',
-			email: '',
-			message: '',
-			'g-recaptcha-response': '',
-		},
-		resolver: zodResolver(contactSchema),
-	});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isSubmitting, isSubmitSuccessful },
+    reset,
+    setValue,
+  } = useForm<ContactSchema>({
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+      'g-recaptcha-response': '',
+    },
+    resolver: zodResolver(contactSchema),
+  });
 
-	const [recaptchaRef, setRecaptchaRef] = useState(null);
+  const [recaptchaRef, setRecaptchaRef] = useState(null);
 
-	const handleRecaptchaRef = (e: any) => {
-		setRecaptchaRef(e);
-	};
+  const handleRecaptchaRef = (e: Reaptcha | null) => {
+    setRecaptchaRef(e as null);
+  };
 
-	const onSubmit: SubmitHandler<ContactSchema> = (formData) => {
-		emailjs.send('viniciuscosta89_github', 'github_template', formData, 'e4Y2hmtYWpuxUQfHC').then(
-			(response) => {
-				reset();
-				// @ts-ignore
-				recaptchaRef.reset();
-				console.log('SUCCESS!', response.status, response.text);
-			},
-			(error) => {
-				console.log('FAILED...', error);
-			}
-		);
-	};
+  const onSubmit: SubmitHandler<ContactSchema> = formData => {
+    emailjs.send('viniciuscosta89_github', 'github_template', formData, 'e4Y2hmtYWpuxUQfHC').then(
+      response => {
+        reset();
+        // @ts-ignore
+        recaptchaRef.reset();
+        console.log('SUCCESS!', response.status, response.text);
+      },
+      error => {
+        console.log('FAILED...', error);
+      },
+    );
+  };
 
-	const recaptchaOnChange = (token: string) => {
-		setValue('g-recaptcha-response', token);
-	};
+  const recaptchaOnChange = (token: string) => {
+    setValue('g-recaptcha-response', token);
+  };
 
-	return (
-		<motion.form
-			className={contactFormStyle}
-			onSubmit={handleSubmit(onSubmit)}
-			initial={{ opacity: 0, scale: 0 }}
-			animate={{ opacity: 1, scale: 1 }}
-			transition={{ type: 'spring' }}
-			viewport={{ once: true }}
-		>
-			<fieldset className={contactFieldsetStyle}>
-				<label htmlFor="name">Name:</label>
-				<input className={inputStyle} type="text" id="name" {...register('name')} placeholder="Name" />
-				{errors.name && (
-					<span className={errorIcon}>
-						<Icons.Exclamation />
-					</span>
-				)}
-				<ErrorMessage errors={errors} name="name" render={({ message }) => <p className={errorMessage}>{message}</p>} />
-			</fieldset>
+  return (
+    <motion.form
+      className={contactFormStyle}
+      onSubmit={handleSubmit(onSubmit)}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: 'spring' }}
+      viewport={{ once: true }}
+    >
+      <fieldset className={contactFieldsetStyle}>
+        <label htmlFor="name">Name:</label>
+        <input
+          className={inputStyle}
+          type="text"
+          id="name"
+          {...register('name')}
+          placeholder="Name"
+        />
+        {errors.name && (
+          <span className={errorIcon}>
+            <Icons.Exclamation />
+          </span>
+        )}
+        <ErrorMessage
+          errors={errors}
+          name="name"
+          render={({ message }) => <p className={errorMessage}>{message}</p>}
+        />
+      </fieldset>
 
-			<fieldset className={contactFieldsetStyle}>
-				<label htmlFor="email">Email:</label>
-				<input className={inputStyle} id="email" {...register('email')} placeholder="Email" />
-				{errors.email && (
-					<motion.span
-						className={errorIcon}
-						initial={{ opacity: 0, x: 32 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ type: 'spring' }}
-					>
-						<Icons.Exclamation />
-					</motion.span>
-				)}
-				<ErrorMessage
-					errors={errors}
-					name="email"
-					render={({ message }) => (
-						<motion.p
-							className={errorMessage}
-							initial={{ opacity: 0, x: 32 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ type: 'spring' }}
-						>
-							{message}
-						</motion.p>
-					)}
-				/>
-			</fieldset>
+      <fieldset className={contactFieldsetStyle}>
+        <label htmlFor="email">Email:</label>
+        <input className={inputStyle} id="email" {...register('email')} placeholder="Email" />
+        {errors.email && (
+          <motion.span
+            className={errorIcon}
+            initial={{ opacity: 0, x: 32 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: 'spring' }}
+          >
+            <Icons.Exclamation />
+          </motion.span>
+        )}
+        <ErrorMessage
+          errors={errors}
+          name="email"
+          render={({ message }) => (
+            <motion.p
+              className={errorMessage}
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ type: 'spring' }}
+            >
+              {message}
+            </motion.p>
+          )}
+        />
+      </fieldset>
 
-			<fieldset className={contactFieldsetTextareaStyle}>
-				<label htmlFor="message">Message:</label>
-				<textarea rows={4} className={inputStyle} id="message" {...register('message')} placeholder="Message" />
-				{errors.message && (
-					<span className={errorMessageIcon}>
-						<Icons.Exclamation />
-					</span>
-				)}
-				<ErrorMessage
-					errors={errors}
-					name="message"
-					render={({ message }) => (
-						<motion.p
-							className={errorMessage}
-							initial={{ opacity: 0, x: 32 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ type: 'spring' }}
-						>
-							{message}
-						</motion.p>
-					)}
-				/>
+      <fieldset className={contactFieldsetTextareaStyle}>
+        <label htmlFor="message">Message:</label>
+        <textarea
+          rows={4}
+          className={inputStyle}
+          id="message"
+          {...register('message')}
+          placeholder="Message"
+        />
+        {errors.message && (
+          <span className={errorMessageIcon}>
+            <Icons.Exclamation />
+          </span>
+        )}
+        <ErrorMessage
+          errors={errors}
+          name="message"
+          render={({ message }) => (
+            <motion.p
+              className={errorMessage}
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ type: 'spring' }}
+            >
+              {message}
+            </motion.p>
+          )}
+        />
 
-				<motion.img
-					src={patternRings}
-					className={patternRingsStyle}
-					initial={{ opacity: 0, x: -32 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ type: 'spring', delay: 1 }}
-					alt=""
-				/>
-			</fieldset>
+        <motion.img
+          src={patternRings}
+          className={patternRingsStyle}
+          initial={{ opacity: 0, x: -32 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: 'spring', delay: 1 }}
+          alt=""
+        />
+      </fieldset>
 
-			<div
-				className={css({
-					display: 'flex',
-					flexDirection: 'column',
-					gap: '0.5rem',
-					alignItems: 'flex-end',
-					position: 'relative',
-				})}
-			>
-				<Reaptcha
-					sitekey={import.meta.env.PUBLIC_RECAPTCHA_KEY}
-					ref={(e) => handleRecaptchaRef(e)}
-					onVerify={recaptchaOnChange}
-					theme="dark"
-				/>
-				<ErrorMessage
-					errors={errors}
-					name="g-recaptcha-response"
-					render={({ message }) => (
-						<motion.p
-							className={errorMessage}
-							initial={{ opacity: 0, x: 32 }}
-							animate={{ opacity: 1, x: 0 }}
-							transition={{ type: 'spring' }}
-						>
-							{message}
-						</motion.p>
-					)}
-				/>
-			</div>
+      <div
+        className={css({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.5rem',
+          alignItems: 'flex-end',
+          position: 'relative',
+        })}
+      >
+        <Reaptcha
+          sitekey={import.meta.env.PUBLIC_RECAPTCHA_KEY}
+          ref={e => handleRecaptchaRef(e)}
+          onVerify={recaptchaOnChange}
+          theme="dark"
+        />
+        <ErrorMessage
+          errors={errors}
+          name="g-recaptcha-response"
+          render={({ message }) => (
+            <motion.p
+              className={errorMessage}
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ type: 'spring' }}
+            >
+              {message}
+            </motion.p>
+          )}
+        />
+      </div>
 
-			<Button
-				type="submit"
-				className={css({
-					justifySelf: 'flex-end',
-				})}
-				disabled={!isDirty}
-			>
-				<AnimatePresence>
-					<motion.span
-						initial={{ opacity: 0, y: -32 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: 32 }}
-						transition={{ type: 'spring' }}
-					>
-						{isSubmitSuccessful ? 'Message sent!' : isSubmitting ? 'Submitting...' : 'Send message'}
-					</motion.span>
-				</AnimatePresence>
-			</Button>
-		</motion.form>
-	);
+      <Button
+        type="submit"
+        className={css({
+          justifySelf: 'flex-end',
+        })}
+        disabled={!isDirty}
+      >
+        <AnimatePresence>
+          <motion.span
+            initial={{ opacity: 0, y: -32 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 32 }}
+            transition={{ type: 'spring' }}
+          >
+            {isSubmitSuccessful ? 'Message sent!' : isSubmitting ? 'Submitting...' : 'Send message'}
+          </motion.span>
+        </AnimatePresence>
+      </Button>
+    </motion.form>
+  );
 }
 
 export default ContactForm;
