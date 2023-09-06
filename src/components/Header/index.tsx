@@ -26,7 +26,7 @@ const HeaderStyled = styled(motion.header, {
 
     _before: {
       content: '""',
-      bgImage: 'url(/assets/pattern-rings.svg)',
+      bgImage: 'url(/src/assets/pattern-rings.svg)',
       display: {
         base: 'block',
         md: 'none',
@@ -49,7 +49,7 @@ const HeaderStyled = styled(motion.header, {
 
     _after: {
       content: '""',
-      bgImage: 'url(/assets/pattern-circle.svg)',
+      bgImage: 'url(/src/assets/pattern-circle.svg)',
       display: {
         base: 'block',
         md: 'none',
@@ -239,12 +239,12 @@ function Header() {
         </HeaderGrid>
 
         <ProfileImage>
-          <source srcSet={profileDesktop} media="(min-width: 1140px)" />
-          <source srcSet={profileTablet} media="(min-width: 768px)" />
-          <img src={profileMobile} alt="AI rendered Vinicius Costa's image " />
+          <source srcSet={profileDesktop.src} media="(min-width: 1140px)" />
+          <source srcSet={profileTablet.src} media="(min-width: 768px)" />
+          <img src={profileMobile.src} alt="AI rendered Vinicius Costa's image " />
 
           <ProfileImageReal>
-            <img src={profileReal} alt="My real picture" />
+            <img src={profileReal.src} alt="My real picture" />
           </ProfileImageReal>
         </ProfileImage>
       </Container>

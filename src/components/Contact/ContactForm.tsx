@@ -261,7 +261,7 @@ function ContactForm() {
         />
 
         <motion.img
-          src={patternRings}
+          src={patternRings.src}
           className={patternRingsStyle}
           initial={{ opacity: 0, x: -32 }}
           animate={{ opacity: 1, x: 0 }}

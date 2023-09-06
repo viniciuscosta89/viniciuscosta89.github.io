@@ -1,11 +1,13 @@
 ---
 // @ts-ignore
 import { css } from '/styled-system/css';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from '@type/projects';
 
 interface Props {
   imgs: {
-    large: string;
-    small: string;
+    large: ImageMetadata;
+    small: ImageMetadata;
   };
   alt: string;
 }
@@ -22,6 +24,6 @@ const { imgs, alt } = Astro.props;
 ---
 
 <picture class={projectImgStyle}>
-  <source srcset={`/assets/${imgs.large}`} media="(min-width: 1140px)" />
-  <img src={`/assets/${imgs.small}`} alt={alt} loading="lazy" />
+  <source srcset={imgs.large.src} media="(min-width: 1140px)" />
+  <img src={imgs.small.src} alt={alt} />
 </picture>

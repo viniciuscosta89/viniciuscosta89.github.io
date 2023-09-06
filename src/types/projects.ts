@@ -1,11 +1,18 @@
 export interface ProjectsType {
   imgs: {
-    large: string;
-    small: string;
+    large: ImageMetadata;
+    small: ImageMetadata;
   };
   alt: string;
   name: string;
   live: string;
   code?: string;
   stack: string[];
+}
+
+export interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
 }

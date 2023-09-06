@@ -10,7 +10,7 @@ export const jobs: JobType[] = [
       from: 'Ago 2023',
       to: 'Current',
     },
-    icon: wefitIcon,
+    icon: wefitIcon.src,
     activities: ['In development ⚠️'],
   },
   {

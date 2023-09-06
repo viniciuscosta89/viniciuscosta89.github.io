@@ -1,18 +1,17 @@
 {
-	"extends": "astro/tsconfigs/strict",
-	"compilerOptions": {
-		"baseUrl": ".",
-		"jsx": "react-jsx",
-		"jsxImportSource": "react",
-		"importsNotUsedAsValues": "error",
-		"paths": {
-			"@components/*": ["src/components/*"],
-			"@layouts/*": ["src/layouts/*"],
-			"@assets/*": ["/assets/*"],
-			"@data/*": ["src/data/*"],
-			"@type/*": ["src/types/*"]
-		},
-		"types": ["vite/client"]
-	},
-	"include": ["src", "styled-system"]
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["/src/assets/*"],
+      "@data/*": ["src/data/*"],
+      "@type/*": ["src/types/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src", "styled-system"]
 }

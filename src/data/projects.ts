@@ -1,10 +1,21 @@
 import type { ProjectsType } from '@type/projects';
+import prudentialThumbnailLarge from '@assets/thumbnail-prudential-large.webp';
+import prudentialThumbnailSmall from '@assets/thumbnail-prudential-small.webp';
+
+import marvelThumbnailLarge from '@assets/thumbnail-marvel-characters-large.webp';
+import marvelThumbnailSmall from '@assets/thumbnail-marvel-characters-small.webp';
+
+import newsHomepageThumbnailLarge from '@assets/thumbnail-news-homepage-large.webp';
+import newsHomepageThumbnailSmall from '@assets/thumbnail-news-homepage-small.webp';
+
+import spaceTourismThumbnailLarge from '@assets/thumbnail-space-tourism-website-large.webp';
+import spaceTourismThumbnailSmall from '@assets/thumbnail-space-tourism-website-small.webp';
 
 export const projects: ProjectsType[] = [
   {
     imgs: {
-      large: 'thumbnail-prudential-large.webp',
-      small: 'thumbnail-prudential-small.webp',
+      large: prudentialThumbnailLarge,
+      small: prudentialThumbnailSmall,
     },
     alt: 'Prudential screenshot',
     name: 'Prudential',
@@ -13,8 +24,8 @@ export const projects: ProjectsType[] = [
   },
   {
     imgs: {
-      large: 'thumbnail-marvel-characters-large.webp',
-      small: 'thumbnail-marvel-characters-small.webp',
+      large: marvelThumbnailLarge,
+      small: marvelThumbnailSmall,
     },
     alt: 'marvel-characters screenshot',
     name: 'Marvel Characters',
@@ -32,8 +43,8 @@ export const projects: ProjectsType[] = [
   },
   {
     imgs: {
-      large: 'thumbnail-news-homepage-large.webp',
-      small: 'thumbnail-news-homepage-small.webp',
+      large: newsHomepageThumbnailLarge,
+      small: newsHomepageThumbnailSmall,
     },
     alt: 'News homepage screenshot',
     name: 'News Homepage',
@@ -43,8 +54,8 @@ export const projects: ProjectsType[] = [
   },
   {
     imgs: {
-      large: 'thumbnail-space-tourism-website-large.webp',
-      small: 'thumbnail-space-tourism-website-small.webp',
+      large: spaceTourismThumbnailLarge,
+      small: spaceTourismThumbnailSmall,
     },
     alt: 'Space Tourism website screenshot',
     name: 'Space Tourism website',
