@@ -1,33 +1,6 @@
-import type { ReactNode } from 'react';
-// @ts-ignore
-import { css } from '/styled-system/css';
 import { motion } from 'framer-motion';
-
-const heroTextStyle = css({
-  color: 'black.100',
-  fontSize: {
-    base: '-1',
-    md: 'paragraph',
-  },
-  lineHeight: '1.55',
-  marginBlockEnd: {
-    base: '1.5rem',
-    md: '2.13rem',
-    lg: '4.12rem',
-  },
-  maxWidth: {
-    base: 'initial',
-    md: '50%',
-  },
-  textAlign: {
-    base: 'center',
-    md: 'left',
-  },
-});
-
-interface HeroTextProps {
-  children: ReactNode;
-}
+import { heroTextStyle } from './Hero.styles';
+import type { HeroTextProps } from './Hero.types';
 
 function HeroText({ children }: HeroTextProps) {
   return (

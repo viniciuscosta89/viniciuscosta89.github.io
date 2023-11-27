@@ -1,16 +1,6 @@
 ---
-// @ts-ignore
-import { css } from '/styled-system/css';
 import { motion } from 'framer-motion';
-
-const projectRootStyle = css({
-  position: 'relative',
-  py: {
-    base: '5rem',
-    md: '5rem 6.25rem',
-    lg: '5rem 8.70rem',
-  },
-});
+import { projectRootStyle } from './Projects.styles';
 ---
 
 <motion.section id="projects" className={projectRootStyle} viewport={{ once: true }}>

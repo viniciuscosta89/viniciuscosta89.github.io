@@ -1,118 +1,27 @@
-// @ts-ignore
-import { css } from '/styled-system/css';
-// @ts-ignore
-import type { SystemStyleObject } from '../styled-system/types';
+import patternRings from '@assets/pattern-rings.svg';
+import Button from '@components/Button';
+import Icons from '@components/Icons';
+import emailjs from '@emailjs/browser';
+import { ErrorMessage } from '@hookform/error-message';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ErrorMessage } from '@hookform/error-message';
-import emailjs from '@emailjs/browser';
 import Reaptcha from 'reaptcha';
-
-import Button from '@components/Button';
-import patternRings from '@assets/pattern-rings.svg';
-import Icons from '@components/Icons';
-
-const contactFormStyle = css({
-  bg: 'black.700',
-  display: 'grid',
-  gap: '2rem',
-  paddingBlockEnd: '5.44rem',
-
-  '& label': {
-    display: 'none',
-  },
-});
-
-const inputStyle: SystemStyleObject = css({
-  bg: 'transparent',
-  borderBottomColor: 'white',
-  borderBottomWidth: '0.0625rem',
-  borderBottomStyle: 'solid',
-  color: 'white',
-  fontSize: '-1',
-  gridArea: 'input',
-  p: '1rem 1.5rem',
-  textTransform: 'uppercase',
-  transition: 'all 0.3s ease-in-out',
-  width: '100%',
-
-  _focus: {
-    bg: 'black.600',
-    borderColor: 'red.300',
-    outlineOffset: '2px',
-  },
-
-  _placeholder: {
-    letterSpacing: '-0.01388rem',
-    opacity: 0.5,
-  },
-});
-
-const contactFieldsetStyle = css({
-  display: 'grid',
-  gridTemplateAreas: `
-		"input"
-		"errors"
-	`,
-  alignItems: 'center',
-  gap: '0.5rem',
-  position: 'relative',
-  zIndex: '0',
-});
-
-const contactFieldsetTextareaStyle = css({
-  display: 'grid',
-  gridTemplateAreas: `
-		"input"
-		"errors"
-	`,
-  alignItems: 'flex-start',
-  gap: '0.5rem',
-  position: 'relative',
-  zIndex: '0',
-});
-
-const errorMessage = css({
-  color: 'red.400',
-  fontSize: '-2',
-  gridArea: 'errors',
-  justifySelf: 'flex-end',
-});
-
-const errorIcon = css({
-  color: 'red.400',
-  gridArea: 'input',
-  justifySelf: 'flex-end',
-});
-
-const errorMessageIcon = css({
-  color: 'red.400',
-  gridArea: 'input',
-  justifySelf: 'flex-end',
-  py: '1rem',
-});
-
-const patternRingsStyle = css({
-  position: 'absolute',
-  display: {
-    base: 'block',
-    md: 'none',
-    lg: 'block',
-  },
-  maxWidth: 'unset',
-  left: {
-    base: '-100%',
-    lg: '-225%',
-  },
-  bottom: {
-    base: '-50%',
-  },
-  zIndex: '-1',
-});
+// @ts-expect-error: panda-css missing declaration types
+import { css } from '/styled-system/css';
+import { z } from 'zod';
+import {
+  contactFormStyle,
+  contactFieldsetStyle,
+  inputStyle,
+  errorIcon,
+  errorMessage,
+  contactFieldsetTextareaStyle,
+  errorMessageIcon,
+  patternRingsStyle,
+} from './Contact.styles';
 
 const contactSchema = z
   .object({
@@ -149,6 +58,7 @@ function ContactForm() {
   });
 
   const [recaptchaRef, setRecaptchaRef] = useState(null);
+  // const recaptcha = useRef<HTMLFormElement>(null);
 
   const handleRecaptchaRef = (e: Reaptcha | null) => {
     setRecaptchaRef(e as null);
@@ -158,8 +68,9 @@ function ContactForm() {
     emailjs.send('viniciuscosta89_github', 'github_template', formData, 'e4Y2hmtYWpuxUQfHC').then(
       response => {
         reset();
-        // @ts-ignore
-        recaptchaRef.reset();
+        // @ts-expect-error: recaptchaRef is not null
+        recaptchaRef?.reset();
+
         console.log('SUCCESS!', response.status, response.text);
       },
       error => {
@@ -168,7 +79,7 @@ function ContactForm() {
     );
   };
 
-  const recaptchaOnChange = (token: string) => {
+  const recaptchaOnChange = (token: string): void => {
     setValue('g-recaptcha-response', token);
   };
 
@@ -281,7 +192,9 @@ function ContactForm() {
       >
         <Reaptcha
           sitekey={import.meta.env.PUBLIC_RECAPTCHA_KEY}
-          ref={e => handleRecaptchaRef(e)}
+          ref={e => {
+            handleRecaptchaRef(e);
+          }}
           onVerify={recaptchaOnChange}
           theme="dark"
         />

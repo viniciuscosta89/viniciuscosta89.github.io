@@ -1,17 +1,6 @@
-// @ts-ignore
-import { css } from '/styled-system/css';
+import { dividerStyle } from './Divider.styles';
 import { motion } from 'framer-motion';
-
-const dividerStyle = css({
-  bg: 'white',
-  color: 'white',
-  height: '0.0625rem',
-  width: '100%',
-});
-
-interface DividerProps {
-  delay?: number;
-}
+import type { DividerProps } from './Divider.types';
 
 function Divider({ delay }: DividerProps) {
   return (

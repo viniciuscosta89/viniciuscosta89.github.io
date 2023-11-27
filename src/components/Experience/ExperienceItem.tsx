@@ -1,23 +1,6 @@
-import type { ReactNode } from 'react';
-// @ts-ignore
-import { css } from '/styled-system/css';
 import { motion } from 'framer-motion';
-
-const experienceItemStyle = css({
-  display: 'grid',
-  gap: {
-    md: '1rem',
-  },
-  placeItems: {
-    base: 'center',
-    md: 'flex-start',
-  },
-});
-
-interface ExperienceItemProps {
-  children: ReactNode;
-  delay?: number;
-}
+import { experienceItemStyle } from './Experience.styles';
+import type { ExperienceItemProps } from './Experience.types';
 
 function ExperienceItem({ children, delay }: ExperienceItemProps) {
   return (

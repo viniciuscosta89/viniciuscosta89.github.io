@@ -1,33 +1,6 @@
-import type { ReactNode } from 'react';
-// @ts-ignore
-import { css } from '/styled-system/css';
 import { motion } from 'framer-motion';
-
-interface ProjectItemProps {
-  children: ReactNode;
-  delay?: number;
-}
-
-const projectItemStyle = css({
-  display: 'grid',
-  alignContent: 'flex-start',
-  position: 'relative',
-  gridTemplateAreas: {
-    lg: `'img'
-				'name'
-				'stack'
-		`,
-  },
-
-  _hover: {
-    lg: {
-      '& .project__actions': {
-        opacity: 1,
-        visibility: 'visible',
-      },
-    },
-  },
-});
+import { projectItemStyle } from './Projects.styles';
+import type { ProjectItemProps } from './Project.types';
 
 function ProjectItem({ children, delay }: ProjectItemProps) {
   return (

@@ -1,7 +1,6 @@
 ---
-// @ts-ignore
-import { css } from '/styled-system/css';
 import type { ImageMetadata } from '@type/projects';
+import { projectImgStyle } from './Projects.styles';
 
 interface Props {
   imgs: {
@@ -10,14 +9,6 @@ interface Props {
   };
   alt: string;
 }
-
-const projectImgStyle = css({
-  display: 'block',
-  maxWidth: '100%',
-  gridArea: {
-    lg: 'img',
-  },
-});
 
 const { imgs, alt } = Astro.props;
 ---

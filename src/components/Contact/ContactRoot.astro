@@ -1,14 +1,7 @@
 ---
-// @ts-ignore
+// @ts-expect-error: panda-css type declarations
 import { css } from '/styled-system/css';
-
-const contactRootStyle = css({
-  bg: 'black.700',
-  paddingBlockStart: '3.75rem',
-  px: {
-    md: '8rem',
-  },
-});
+import { contactRootStyle } from './Contact.styles';
 ---
 
 <section id="contact" class={contactRootStyle}>

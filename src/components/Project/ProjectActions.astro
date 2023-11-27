@@ -1,39 +1,7 @@
 ---
-// @ts-ignore
-import { css, cx } from '/styled-system/css';
-
-const projectActionsStyle = css({
-  backgroundColor: {
-    lg: 'black.850',
-  },
-  display: 'flex',
-  flexDirection: {
-    lg: 'column',
-  },
-  gap: '2rem',
-  justifyContent: {
-    lg: 'center',
-  },
-  alignItems: {
-    lg: 'center',
-  },
-  opacity: {
-    lg: 0,
-  },
-  visibility: {
-    lg: 'hidden',
-  },
-  width: {
-    lg: '100%',
-  },
-  height: {
-    lg: '100%',
-  },
-  gridArea: {
-    lg: 'img',
-  },
-  transition: 'all 0.3s ease-in-out',
-});
+// @ts-expect-error: panda-css missing declaration types
+import { cx } from '/styled-system/css';
+import { projectActionsStyle } from './Projects.styles';
 ---
 
 <div class={cx(projectActionsStyle, 'project__actions')}>

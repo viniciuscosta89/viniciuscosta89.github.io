@@ -1,19 +1,9 @@
 ---
-// @ts-ignore
-import { css } from '/styled-system/css';
+import { experienceTextStyle } from './Experience.styles';
 
-const experienceTextStyle = css({
-  color: 'black.100',
-  fontSize: {
-    base: '-1',
-    lg: '0',
-  },
-  fontWeight: 'regular',
-  lineHeight: {
-    base: '1.62',
-    lg: '1.55',
-  },
-});
+interface Props {
+  text: string;
+}
 
 const { text } = Astro.props;
 ---
