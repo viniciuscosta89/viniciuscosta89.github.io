@@ -11,7 +11,10 @@ export const jobs: JobType[] = [
       to: 'Current',
     },
     icon: wefitIcon.src,
-    activities: ['In development ⚠️'],
+    activities: [
+      'Develop components with React, Typescript and Styled Components for AEM',
+      'Develop A/B tests with HTML, CSS and JS for Adobe Target',
+    ],
   },
   {
     name: 'Valtech',

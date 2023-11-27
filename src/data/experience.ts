@@ -3,11 +3,11 @@ import type { ExperienceItemsType } from '@type/experience';
 export const experienceItems: ExperienceItemsType[] = [
   {
     name: 'HTML',
-    text: '6 Years Experience',
+    text: '7 Years Experience',
   },
   {
     name: 'CSS',
-    text: '6 Years Experience',
+    text: '7 Years Experience',
   },
   {
     name: 'Sass',
@@ -15,11 +15,11 @@ export const experienceItems: ExperienceItemsType[] = [
   },
   {
     name: 'JavaScript',
-    text: '5 Years Experience',
+    text: '6 Years Experience',
   },
   {
     name: 'React',
-    text: '1 Year Experience',
+    text: '3 Years Experience',
   },
   {
     name: 'Vue',
@@ -27,15 +27,15 @@ export const experienceItems: ExperienceItemsType[] = [
   },
   {
     name: 'TypeScript',
-    text: '1 Year Experience',
+    text: '3 Years Experience',
   },
   {
     name: 'AEM',
-    text: '1 Year Experience',
+    text: '3 Years Experience',
   },
   {
     name: 'Git',
-    text: '6 Years Experience',
+    text: '7 Years Experience',
   },
   {
     name: 'Agile',
