@@ -14,7 +14,7 @@ import { footerStyle, footerGrid, footerTitleStyle, socialNetworksStyle } from '
 
       <ul class={socialNetworksStyle}>
         {
-          socialNetworks.map(({ id, url, label, logo: Logo }) => (
+          socialNetworks.map(({ url, label, logo: Logo }) => (
             <li>
               <a href={url} title={`My ${label} profile`}>
                 <Logo />
