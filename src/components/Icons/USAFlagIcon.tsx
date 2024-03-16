@@ -1,6 +1,6 @@
 function USAFlagIcon() {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 28">
 			<title>USA flag icon</title>
 			<rect width="30" height="24" x="1" y="4" fill="#fff" rx="4" ry="4" />
 			<path

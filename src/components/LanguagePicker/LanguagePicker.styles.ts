@@ -14,16 +14,18 @@ export const languagePickerStyle = css({
 		md: 'relative',
 	},
 	right: 0,
+	bottom: 0,
 	flexDirection: {
 		base: 'column',
 		md: 'row',
 	},
+	zIndex: 5,
 });
 
 export const languagePickerFlag = css({
 	display: 'flex',
 	height: {
-		base: '2rem',
+		base: '1.5rem',
 		md: '2rem',
 	},
 	filter: 'grayscale(100%)',

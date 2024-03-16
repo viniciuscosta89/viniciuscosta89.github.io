@@ -30,8 +30,13 @@ export const footerGrid = css({
 export const footerTitleStyle = css({
 	display: 'flex',
 	alignItems: 'center',
+	justifyContent: {
+		base: 'center',
+		md: 'flex-start',
+	},
 	fontSize: '3',
 	letterSpacing: '-0.02081rem',
+	lineHeight: 1,
 
 	'& span': {
 		fontWeight: 'light',

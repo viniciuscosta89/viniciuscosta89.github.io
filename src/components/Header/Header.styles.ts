@@ -99,6 +99,7 @@ export const HeaderTitle = styled('div', {
 		alignItems: 'center',
 		fontSize: '3',
 		letterSpacing: '-0.02081rem',
+		lineHeight: 1,
 
 		'& span': {
 			fontWeight: 'light',
