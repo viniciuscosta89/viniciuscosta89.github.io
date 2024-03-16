@@ -1,31 +1,8 @@
 import type { ProjectsType } from '@type/projects';
-import prudentialThumbnailLarge from '@assets/thumbnail-prudential-large.webp';
-import prudentialThumbnailSmall from '@assets/thumbnail-prudential-small.webp';
-
-import marvelThumbnailLarge from '@assets/thumbnail-marvel-characters-large.webp';
-import marvelThumbnailSmall from '@assets/thumbnail-marvel-characters-small.webp';
-
-import newsHomepageThumbnailLarge from '@assets/thumbnail-news-homepage-large.webp';
-import newsHomepageThumbnailSmall from '@assets/thumbnail-news-homepage-small.webp';
-
-import spaceTourismThumbnailLarge from '@assets/thumbnail-space-tourism-website-large.webp';
-import spaceTourismThumbnailSmall from '@assets/thumbnail-space-tourism-website-small.webp';
-
-import entertainmentWebAppLarge from '@assets/projects/thumbnail-entertainment-web-app-nextjs-large.webp';
-import entertainmentWebAppSmall from '@assets/projects/thumbnail-entertainment-web-app-nextjs-small.jpg';
-
-import interactiveCardDetailsFormSvelteLarge from '@assets/projects/thumbnail-interactive-card-details-form-svelte-large.webp';
-import interactiveCardDetailsFormSvelteSmall from '@assets/projects/thumbnail-interactive-card-details-form-svelte-small.jpg';
-
-import devjobsWebAppLarge from '@assets/projects/thumbnail-devjobs-web-app-large.webp';
-import devjobsWebAppSmall from '@assets/projects/thumbnail-devjobs-web-app-small.jpg';
 
 export const projects: ProjectsType[] = [
 	{
-		imgs: {
-			large: devjobsWebAppLarge,
-			small: devjobsWebAppSmall,
-		},
+		imgPath: '/src/assets/projects/thumbnail-devjobs-web-app-large.webp',
 		alt: 'Devjobs web app screenshot',
 		name: 'Devjobs web app',
 		live: 'https://devjobs-web-app-viniciuscosta89.vercel.app/',
@@ -41,10 +18,8 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: interactiveCardDetailsFormSvelteLarge,
-			small: interactiveCardDetailsFormSvelteSmall,
-		},
+		imgPath:
+			'/src/assets/projects/thumbnail-interactive-card-details-form-svelte-large.webp',
 		alt: 'Interactive card details form screenshot',
 		name: 'Interactive card details form',
 		live: 'https://interactive-card-details-form-svelte-viniciuscosta89.vercel.app/',
@@ -61,10 +36,9 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: entertainmentWebAppLarge,
-			small: entertainmentWebAppSmall,
-		},
+		imgPath:
+			'/src/assets/projects/thumbnail-entertainment-web-app-nextjs-large.webp',
+
 		alt: 'Entertainment web app screenshot',
 		name: 'Entertainment web app',
 		live: 'https://entertainment-web-app-nextjs-viniciuscosta89.vercel.app',
@@ -84,10 +58,7 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: prudentialThumbnailLarge,
-			small: prudentialThumbnailSmall,
-		},
+		imgPath: '/src/assets/projects/thumbnail-space-tourism-website-large.webp',
 		alt: 'Prudential screenshot',
 		name: 'Prudential',
 		live: 'https://www.prudential.com.br',
@@ -103,10 +74,7 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: marvelThumbnailLarge,
-			small: marvelThumbnailSmall,
-		},
+		imgPath: '/src/assets/projects/thumbnail-marvel-characters-large.webp',
 		alt: 'marvel-characters screenshot',
 		name: 'Marvel Characters',
 		live: 'https://marvel-characters-viniciuscosta89.vercel.app/',
@@ -122,10 +90,7 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: newsHomepageThumbnailLarge,
-			small: newsHomepageThumbnailSmall,
-		},
+		imgPath: '/src/assets/projects/thumbnail-news-homepage-large.webp',
 		alt: 'News homepage screenshot',
 		name: 'News Homepage',
 		live: 'https://news-homepage-strapi-vue-viniciuscosta89.vercel.app/',
@@ -141,10 +106,7 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgs: {
-			large: spaceTourismThumbnailLarge,
-			small: spaceTourismThumbnailSmall,
-		},
+		imgPath: '/src/assets/projects/thumbnail-space-tourism-website-large.webp',
 		alt: 'Space Tourism website screenshot',
 		name: 'Space Tourism website',
 		live: 'https://space-tourism-website-viniciuscosta89.vercel.app/',

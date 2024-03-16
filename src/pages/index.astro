@@ -133,11 +133,8 @@ const patternRingsStyle = css({
               projects.map((project, i) => (
                 <Project.Item delay={0.3 * i} client:visible>
                   <Project.Img
-                    imgs={{
-                      large: project.imgs.large,
-                      small: project.imgs.small,
-                    }}
-                    alt={project.alt}
+                    imagePath={project.imgPath}
+                    altText={project.alt}
                   />
 
                   <Project.Name name={project.name} />

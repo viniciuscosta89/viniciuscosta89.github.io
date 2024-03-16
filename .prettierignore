@@ -4,6 +4,7 @@ dist
 coverage
 **/*.js
 **/*.ts
+**/*.mjs
 **/*.mts
 **/*.tsx
 node_modules

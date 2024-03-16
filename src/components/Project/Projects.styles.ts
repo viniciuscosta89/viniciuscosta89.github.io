@@ -47,8 +47,6 @@ export const projectGridStyle = css({
 });
 
 export const projectImgStyle = css({
-	display: 'block',
-	maxWidth: '100%',
 	gridArea: {
 		lg: 'img',
 	},

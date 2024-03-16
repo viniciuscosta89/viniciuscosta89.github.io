@@ -1,19 +1,29 @@
 ---
-import type { ImageMetadata } from '@type/projects';
+import type { ImageMetadata } from 'astro';
 import { projectImgStyle } from './Projects.styles';
+import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 interface Props {
-  imgs: {
-    large: ImageMetadata;
-    small: ImageMetadata;
-  };
-  alt: string;
+  // imgs: {
+  //   large: ImageMetadata;
+  //   small: ImageMetadata;
+  // };
+  imagePath: string;
+  altText: string;
 }
 
-const { imgs, alt } = Astro.props;
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{webp,jpeg,jpg,png,gif}',
+);
+
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/**/*.{webp,jpeg,jpg,png,gif}"`,
+  );
 ---
 
-<picture class={projectImgStyle}>
-  <source srcset={imgs.large.src} media="(min-width: 1140px)" />
-  <img src={imgs.small.src} alt={alt} />
-</picture>
+<div class={projectImgStyle}>
+  <Picture formats={['avif', 'webp']} src={images[imagePath]()} alt={altText} />
+</div>
