@@ -58,7 +58,7 @@ const patternRingsStyle = css({
           <Experience.Grid>
             {
               experienceItems.map((experience, i) => (
-                <Experience.Item delay={0.3 * i} client:visible>
+                <Experience.Item delay={0.15 * i} client:visible>
                   <Experience.Name name={experience.name} />
                   <Experience.Text
                     yearsOfExperience={experience.yearsOfExperience}
