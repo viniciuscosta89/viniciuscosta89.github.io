@@ -1,11 +1,17 @@
 export interface JobType {
-  name: string;
-  url: string;
-  role: string;
-  when: {
-    from: string;
-    to: string;
-  };
-  activities: string[];
-  icon?: string;
+	id: number;
+	name: string;
+	url: string;
+	role: englishPortugueseStrings;
+	when: {
+		from: string;
+		to: string;
+	};
+	activities: englishPortugueseStrings[];
+	icon?: string;
+}
+
+export interface englishPortugueseStrings {
+	en: string;
+	'pt-br': string;
 }

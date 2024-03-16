@@ -20,7 +20,7 @@ import { experienceItems } from '@data/experience';
 import Jobs from '@components/Jobs';
 import { jobs } from '@data/jobs';
 
-changeLanguage('en-US');
+changeLanguage('pt-BR');
 
 const patternRingsStyle = css({
   position: 'relative',
@@ -44,7 +44,9 @@ const patternRingsStyle = css({
           {t('hero:text')}
         </Hero.Text>
 
-        <Link url="#contact" client:load delay={1.5}>Contact Me</Link>
+        <Link url="#contact" client:load delay={1.5}
+          >{t('common:contactMe')}</Link
+        >
       </Hero.Root>
 
       <Container>

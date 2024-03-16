@@ -1,11 +1,16 @@
 ---
+import { t, setDefaultNamespace } from 'i18next';
 import { experienceTextStyle } from './Experience.styles';
 
 interface Props {
-  text: string;
+  yearsOfExperience: number;
 }
 
-const { text } = Astro.props;
+const { yearsOfExperience } = Astro.props;
+
+setDefaultNamespace('experience');
 ---
 
-<p class={experienceTextStyle}>{text}</p>
+<p class={experienceTextStyle}>
+  {t('yearsOfExperience', { count: yearsOfExperience })}
+</p>

@@ -1,7 +1,14 @@
 ---
 import Container from '@components/Container';
 import { socialNetworks } from '@data/social-networks';
-import { footerStyle, footerGrid, footerTitleStyle, socialNetworksStyle } from './Footer.styles';
+import {
+  footerStyle,
+  footerGrid,
+  footerTitleStyle,
+  socialNetworksStyle,
+} from './Footer.styles';
+
+import LanguagePicker from '@components/LanguagePicker';
 ---
 
 <footer class={footerStyle}>
@@ -11,6 +18,8 @@ import { footerStyle, footerGrid, footerTitleStyle, socialNetworksStyle } from '
         <span>vinicius</span>
         <strong>costa</strong>
       </div>
+
+      <LanguagePicker />
 
       <ul class={socialNetworksStyle}>
         {

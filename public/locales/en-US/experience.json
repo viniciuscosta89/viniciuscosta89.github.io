@@ -1,0 +1,4 @@
+{
+	"yearsOfExperience_one": "{{ count }} year of experience",
+	"yearsOfExperience_other": "{{ count }} years of experience"
+}

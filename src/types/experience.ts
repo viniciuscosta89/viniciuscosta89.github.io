@@ -1,4 +1,4 @@
 export interface ExperienceItemsType {
-  name: string;
-  text: string;
+	name: string;
+	yearsOfExperience: number;
 }

@@ -1,0 +1,10 @@
+{
+	"title": "Contact",
+	"description": "I'm eager to learn more about your project and how my skills can contribute. Feel free to fill out the form below, and I'll get in touch shortly.",
+	"name": "Name",
+	"email": "Email",
+	"message": "Message",
+	"sendMessage": "Send message",
+	"messageSent": "Message sent!",
+	"submittingMessage": "Sending..."
+}

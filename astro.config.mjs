@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import pandacss from '@pandacss/dev/astro';
-
-import vercel from '@astrojs/vercel/serverless';
+import astroI18next from 'astro-i18next';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  integrations: [react(), pandacss()],
-  adapter: vercel(),
+	integrations: [react(), astroI18next()],
+	i18n: {
+		defaultLocale: 'en-US',
+		locales: ['en-US', 'pt-BR'],
+	},
 });
