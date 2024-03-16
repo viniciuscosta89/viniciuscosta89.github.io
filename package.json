@@ -13,19 +13,19 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@astrojs/check": "0.5.7",
+    "@astrojs/check": "^0.5.9",
     "@astrojs/node": "8.2.3",
     "@astrojs/react": "3.1.0",
-    "@astrojs/ts-plugin": "1.5.3",
+    "@astrojs/ts-plugin": "^1.6.0",
     "@astrojs/vercel": "^7.3.6",
-    "@emailjs/browser": "^3.11.0",
+    "@emailjs/browser": "^4.3.3",
     "@fontsource-variable/space-grotesk": "^5.0.15",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.2",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "@vercel/speed-insights": "^1.0.10",
-    "astro": "4.5.1",
+    "astro": "^4.5.5",
     "astro-i18next": "^1.0.0-beta.21",
     "framer-motion": "^11.0.8",
     "i18next": "^23.10.1",
@@ -39,8 +39,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.6.0",
-    "@pandacss/dev": "^0.34.3",
+    "@biomejs/biome": "^1.6.1",
+    "@pandacss/dev": "^0.35.0",
+    "@types/bun": "^1.0.8",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "@types/styled-system__css": "^5.0.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -66,5 +67,6 @@
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.3.2",
     "vite": "^5.0.2"
-  }
+  },
+  "trustedDependencies": ["sharp"]
 }
