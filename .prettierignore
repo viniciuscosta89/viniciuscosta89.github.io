@@ -3,5 +3,8 @@ build
 dist
 coverage
 **/*.js
+**/*.ts
+**/*.mts
+**/*.tsx
 node_modules
 assets

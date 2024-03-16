@@ -1,5 +1,5 @@
 export interface SectionTitleProps {
-  text: string;
-  align?: string | 'center';
-  hasMarginBottom?: boolean;
+	text: string;
+	align?: string | 'center';
+	hasMarginBottom?: boolean;
 }

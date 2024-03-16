@@ -2,8 +2,8 @@
 import { css } from '/styled-system/css';
 
 export const dividerStyle = css({
-  bg: 'white',
-  color: 'white',
-  height: '0.0625rem',
-  width: '100%',
+	bg: 'white',
+	color: 'white',
+	height: '0.0625rem',
+	width: '100%',
 });

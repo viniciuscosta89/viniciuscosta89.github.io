@@ -7,11 +7,11 @@ import ProjectName from './ProjectName.astro';
 import ProjectStack from './ProjectStack.astro';
 
 export const Project = {
-  Root: ProjectRoot,
-  Actions: ProjectActions,
-  Grid: ProjectGrid,
-  Img: ProjectImg,
-  Item: ProjectItem,
-  Name: ProjectName,
-  Stack: ProjectStack,
+	Root: ProjectRoot,
+	Actions: ProjectActions,
+	Grid: ProjectGrid,
+	Img: ProjectImg,
+	Item: ProjectItem,
+	Name: ProjectName,
+	Stack: ProjectStack,
 };

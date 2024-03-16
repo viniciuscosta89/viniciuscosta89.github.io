@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
 export interface HeroTextProps {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 export interface HeroTitleProps {
-  name: string;
+	name: string;
 }
