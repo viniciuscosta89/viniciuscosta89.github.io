@@ -54,10 +54,7 @@ export const heroTitleStyles = css({
 		md: '70%',
 	},
 	position: 'relative',
-	textWrap: {
-		base: 'auto',
-		md: 'balance',
-	},
+	textWrap: 'balance',
 
 	'& h1': {
 		display: 'inline-block',
