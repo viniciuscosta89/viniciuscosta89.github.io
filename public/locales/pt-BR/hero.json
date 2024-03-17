@@ -1,7 +1,5 @@
 {
-	"title": {
-		"niceTo": "Prazer!",
-		"meetYou": "Meu nome é"
-	},
+	"niceTo": "Prazer!",
+	"meetYou": "Meu nome é",
 	"text": "Sou um desenvolvedor front-end brasileiro com paixão por criar aplicativos e sites acessíveis e fáceis de usar."
 }

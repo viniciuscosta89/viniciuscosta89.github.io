@@ -8,7 +8,7 @@ function HeroText({ children }: HeroTextProps) {
 			className={heroTextStyle}
 			initial={{ opacity: 0, x: -32 }}
 			animate={{ opacity: 1, x: 0 }}
-			transition={{ type: 'spring', delay: 1 }}
+			transition={{ type: 'spring', delay: 0.5 }}
 		>
 			{children}
 		</motion.p>
