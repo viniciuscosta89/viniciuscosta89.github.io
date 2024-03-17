@@ -157,7 +157,7 @@ export const ProfileImage = styled('picture', {
 			base: '-1',
 			lg: '5',
 		},
-		transition: 'ease all 1.5s',
+		transition: 'all 1s ease-in-out',
 		perspective: '1200px',
 		transformStyle: 'preserve-3d',
 
