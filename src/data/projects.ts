@@ -58,7 +58,7 @@ export const projects: ProjectsType[] = [
 		],
 	},
 	{
-		imgPath: '/src/assets/projects/thumbnail-space-tourism-website-large.webp',
+		imgPath: '/src/assets/projects/thumbnail-prudential-large.webp',
 		alt: 'Prudential screenshot',
 		name: 'Prudential',
 		live: 'https://www.prudential.com.br',
