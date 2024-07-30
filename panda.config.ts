@@ -105,6 +105,7 @@ const globalCss = defineGlobalStyles({
 });
 
 export default defineConfig({
+	presets: ['@pandacss/preset-base'],
 	globalCss,
 	// Whether to use css reset
 	preflight: true,
@@ -127,8 +128,23 @@ export default defineConfig({
 				md: '768px',
 				lg: '1140px',
 			},
+			keyframes: {
+				fadein: {
+					'0%': {
+						opacity: '0',
+					},
+					'100%': {
+						opacity: '1',
+					},
+				},
+			},
 		},
 		tokens: {
+			animations: {
+				fadeIn: {
+					value: 'fadeIn 1s ease-in-out 0.5s',
+				},
+			},
 			colors: {
 				black: {
 					900: { value: 'hsl(0deg 0% 0%)' },

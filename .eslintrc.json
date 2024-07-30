@@ -1,37 +1,45 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "jest": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
-    "plugin:astro/recommended",
-    "plugin:react/jsx-runtime"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"jest": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"plugin:prettier/recommended",
+		"plugin:astro/recommended",
+		"plugin:react/jsx-runtime"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"@typescript-eslint",
+		"eslint-plugin-import-helpers",
+		"prettier"
+	],
+	"rules": {
+		"react/no-unknown-property": "off"
+	},
 
-  "overrides": [
-    {
-      "files": ["*.astro"],
-      "parser": "astro-eslint-parser",
-      "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
-      }
-    },
-    {
-      "files": ["*.ts", "*.js", "*.tsx", "*.jsx"],
-      "extends": ["biome"]
-    }
-  ]
+	"overrides": [
+		{
+			// Define the configuration for `.astro` file.
+			"files": ["*.astro"],
+			// Allows Astro components to be parsed.
+			"parser": "astro-eslint-parser",
+			// Parse the script in `.astro` as TypeScript by adding the following configuration.
+			// It's the setting you need when using TypeScript.
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [".astro"]
+			}
+		}
+	]
 }
