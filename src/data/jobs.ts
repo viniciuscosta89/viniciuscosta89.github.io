@@ -1,7 +1,32 @@
+import quantumIcon from '@assets/quantum-logo.svg';
 import type { JobType } from '@type/jobs';
-import wefitIcon from '@assets/wefit-logo.png';
 
 export const jobs: JobType[] = [
+	{
+		id: 5,
+		name: 'Quantum Financial Technologies',
+		url: 'https://www.quantumfintech.com/',
+		role: {
+			en: 'Front-end Engineer',
+			'pt-br': 'Desenvolvedor Front-end',
+		},
+		when: {
+			from: 'Jul 2024',
+			to: 'Current',
+		},
+		icon: quantumIcon.src,
+		activities: [
+			{
+				en: 'Develop components and features with Next.js, React, Typescript and TailwindCSS',
+				'pt-br':
+					'Desenvolver componentes e features com Next.js, React, Typescript e Tailwind CSS',
+			},
+			{
+				en: 'Develop E2E (end-to-end) tests with Cypress',
+				'pt-br': 'Desenvolver testes E2E (end-to-end) com Cypress',
+			},
+		],
+	},
 	{
 		id: 4,
 		name: 'WeFit',
@@ -12,9 +37,8 @@ export const jobs: JobType[] = [
 		},
 		when: {
 			from: 'Aug 2023',
-			to: 'Current',
+			to: 'Jul 2024',
 		},
-		icon: wefitIcon.src,
 		activities: [
 			{
 				en: 'Develop components with React, Typescript and Styled Components for AEM',

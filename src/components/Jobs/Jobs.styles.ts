@@ -89,15 +89,26 @@ export const jobDateStyle = css({
 
 export const jobIconContainerStyle = css({
 	bg: 'black.700',
+	display: 'flex',
+	justifyContent: 'center',
+  alignItems: 'center',
 
 	'& img': {
+		borderRadius: '50%',
 		display: 'block',
-		width: '24px',
-		height: '24px',
+		width: '28px',
+		height: '28px',
 		position: 'relative',
-		left: '50%',
-		top: '50%',
-		marginLeft: '-12px',
-		marginTop: '-12px',
+		filter: 'invert(1) contrast(5) brightness(1)',
+	},
+
+	'& svg': {
+		borderRadius: '50% !important',		
+		width: '24px  !important',
+		height: '24px  !important',	
+		left: 'initial !important',
+    top: 'initial !important',
+    marginLeft: '0 !important',
+    marginTop: '0 !important',	
 	},
 });
