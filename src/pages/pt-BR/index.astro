@@ -1,24 +1,24 @@
 ---
-import { changeLanguage, t } from 'i18next';
-// @ts-ignore
-import { css } from '/styled-system/css';
-import { motion } from 'framer-motion';
-import Layout from '@layouts/Layout.astro';
-import Container from '@components/Container';
-import { Hero } from '@components/Hero';
-import Header from '@components/Header';
-import Link from '@components/Link';
-import Divider from '@components/Divider';
-import SectionTitle from '@components/SectionTitle';
-import { Experience } from '@components/Experience';
-import { Project } from '@components/Project';
-import { Contact } from '@components/Contact';
-import Footer from '@components/Footer/index.astro';
 import patternRings from '@assets/pattern-rings.svg';
-import { projects } from '@data/projects';
-import { experienceItems } from '@data/experience';
+import { Contact } from '@components/Contact';
+import Container from '@components/Container';
+import Divider from '@components/Divider';
+import { Experience } from '@components/Experience';
+import Footer from '@components/Footer/index.astro';
+import Header from '@components/Header/index.astro';
+import { Hero } from '@components/Hero';
 import Jobs from '@components/Jobs';
+import Link from '@components/Link';
+import { Project } from '@components/Project';
+import SectionTitle from '@components/SectionTitle';
+import { experienceItems } from '@data/experience';
 import { jobs } from '@data/jobs';
+import { projects } from '@data/projects';
+import Layout from '@layouts/Layout.astro';
+import { motion } from 'framer-motion';
+import { changeLanguage, t } from 'i18next';
+// @ts-expect-error PandaCSS typing error
+import { css } from '/styled-system/css';
 
 changeLanguage('pt-BR');
 
@@ -36,10 +36,10 @@ const patternRingsStyle = css({
 
 <Layout>
   <>
-    <Header client:load />
+    <Header />
     <main>
       <Hero.Root>
-        <Hero.Title name="Vinicius Costa" client:load />
+        <Hero.Title name="Vinicius Costa" />
         <Hero.Text client:load>
           {t('hero:text')}
         </Hero.Text>
@@ -126,7 +126,9 @@ const patternRingsStyle = css({
             })}
           >
             <SectionTitle text={t('projects:title')} client:visible />
-            <Link url="#contact" client:visible>{t('common:contactMe')}</Link>
+            <Link url="#contact" hasAnimation client:visible
+              >{t('common:contactMe')}</Link
+            >
           </div>
 
           <Project.Grid>
@@ -146,11 +148,21 @@ const patternRingsStyle = css({
                   </Project.Stack>
 
                   <Project.Actions>
-                    <Link url={project.live} target="_blank" client:visible>
+                    <Link
+                      url={project.live}
+                      target="_blank"
+                      hasAnimation
+                      client:visible
+                    >
                       {t('projects:viewProject')}
                     </Link>
                     {project.code && (
-                      <Link url={project.code} target="_blank" client:visible>
+                      <Link
+                        url={project.code}
+                        target="_blank"
+                        hasAnimation
+                        client:visible
+                      >
                         {t('projects:viewCode')}
                       </Link>
                     )}

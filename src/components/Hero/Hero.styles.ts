@@ -33,6 +33,7 @@ export const heroTextStyle = css({
 });
 
 export const heroTitleStyles = css({
+	animation: 'fadeIn',
 	fontSize: {
 		base: '4',
 		md: '8',

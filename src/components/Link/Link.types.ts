@@ -7,4 +7,5 @@ export interface LinkProps {
 	target?: '_blank' | '_self';
 	delay?: number;
 	handleClick?: () => void;
+	hasAnimation?: boolean;
 }

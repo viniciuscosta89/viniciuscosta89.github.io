@@ -1,0 +1,59 @@
+---
+import { Image, Picture } from 'astro:assets';
+import profileReal from '@assets/image-profile-desktop-hover.webp';
+import profileDesktop from '@assets/image-profile-desktop.webp';
+import profileMobile from '@assets/image-profile-mobile.webp';
+import profileTablet from '@assets/image-profile-tablet.webp';
+import Container from '@components/Container';
+import LanguagePicker from '@components/LanguagePicker';
+import { socialNetworks } from '@data/social-networks';
+import {
+  HeaderGrid,
+  HeaderSocialNetworks,
+  HeaderStyled,
+  HeaderTitle,
+  ProfileImageReal,
+  profileImage,
+} from './Header.styles';
+---
+
+<HeaderStyled
+  initial={{ opacity: 0, y: -32 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+>
+  <Container>
+    <HeaderGrid>
+      <HeaderTitle>
+        <span>vinicius</span>
+        <strong>costa</strong>
+      </HeaderTitle>
+
+      <LanguagePicker />
+
+      <HeaderSocialNetworks>
+        {
+          socialNetworks.map(({ id, url, label, logo: Logo }) => (
+            <li>
+              <a
+                href={url}
+                title={`My ${label} profile`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Logo />
+              </a>
+            </li>
+          ))
+        }
+      </HeaderSocialNetworks>
+    </HeaderGrid>
+
+    <Picture
+      class={profileImage}
+      alt="AI rendered Vinicius Costa"
+      widths={[375, 768, 1140]}
+      src={profileDesktop}
+    />
+  </Container>
+</HeaderStyled>

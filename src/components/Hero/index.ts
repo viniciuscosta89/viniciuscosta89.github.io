@@ -1,6 +1,6 @@
 import HeroRoot from './HeroRoot.astro';
-import HeroTitle from './HeroTitle';
 import HeroText from './HeroText';
+import HeroTitle from './HeroTitle.astro';
 
 export const Hero = {
 	Root: HeroRoot,

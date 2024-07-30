@@ -1,8 +1,9 @@
 // @ts-expect-error: panda-css missing declaration types
+import { css } from '/styled-system/css';
+// @ts-expect-error: panda-css missing declaration types
 import { styled } from '/styled-system/jsx';
-import { motion } from 'framer-motion';
 
-export const HeaderStyled = styled(motion.header, {
+export const HeaderStyled = styled('header', {
 	base: {
 		color: 'text',
 		lineHeight: 1,
@@ -130,46 +131,31 @@ export const HeaderSocialNetworks = styled('ul', {
 	},
 });
 
-export const ProfileImage = styled('picture', {
-	base: {
-		display: 'block',
-		position: {
-			base: 'relative',
-			md: 'absolute',
-		},
-		right: {
-			base: 0,
-			md: '-2rem',
-			lg: 0,
-		},
-		top: 0,
-		marginBlockStart: {
-			base: '-7.5rem',
-			md: '0',
-		},
-		mx: 'auto',
-		maxWidth: {
-			base: '10.88794rem',
-			md: '20.125rem',
-			lg: '27.8125rem',
-		},
-		zIndex: {
-			base: '-1',
-			lg: '5',
-		},
-		transition: 'all 1s ease-in-out',
-		perspective: '1200px',
-		transformStyle: 'preserve-3d',
-
-		_hover: {
-			transform: {
-				lg: 'rotateX(0deg) rotateY(-180deg)',
-			},
-		},
-
-		'& > *': {
-			transformStyle: 'preserve-3d',
-		},
+export const profileImage = css({
+	display: 'block',
+	position: {
+		base: 'relative',
+		md: 'absolute',
+	},
+	right: {
+		base: 0,
+		md: '-2rem',
+		lg: 0,
+	},
+	top: 0,
+	marginBlockStart: {
+		base: '-1rem',
+		md: '0',
+	},
+	mx: 'auto',
+	maxWidth: {
+		base: '10.88794rem',
+		md: '20.125rem',
+		lg: '27.8125rem',
+	},
+	zIndex: {
+		base: '-1',
+		lg: '5',
 	},
 });
 
