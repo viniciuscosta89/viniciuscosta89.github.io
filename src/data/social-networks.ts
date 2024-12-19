@@ -1,5 +1,5 @@
-import type { SocialNetworkTypes } from '@type/social-networks';
 import Icons from '@components/Icons/';
+import type { SocialNetworkTypes } from '@type/social-networks';
 
 export const socialNetworks: SocialNetworkTypes[] = [
 	{

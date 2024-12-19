@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { projectItemStyle } from './Projects.styles';
 import type { ProjectItemProps } from './Project.types';
+import { projectItemStyle } from './Projects.styles';
 
 function ProjectItem({ children, delay }: ProjectItemProps) {
 	return (

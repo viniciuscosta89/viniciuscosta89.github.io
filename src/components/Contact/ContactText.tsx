@@ -1,7 +1,7 @@
+import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 // @ts-expect-error: panda-css missing declaration types
 import { css } from '/styled-system/css';
-import { motion } from 'framer-motion';
 
 interface ContactTextProps {
 	children: ReactNode;

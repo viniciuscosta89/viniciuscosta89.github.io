@@ -5,13 +5,13 @@ import 'react-vertical-timeline-component/style.min.css';
 import Container from '@components/Container';
 import Icons from '@components/Icons';
 import {
-	jobsStyle,
-	jobsTimeline,
+	jobActivities,
 	jobDateStyle,
 	jobIconContainerStyle,
 	jobName,
 	jobRole,
-	jobActivities,
+	jobsStyle,
+	jobsTimeline,
 } from './Jobs.styles';
 import type { JobsProps } from './Jobs.types';
 
@@ -58,7 +58,7 @@ function Jobs({ jobs, language }: JobsProps) {
 										: 'current'
 									: capitalizeFirstLetter(
 											formatDate(isPortugueseLanguage, job.when.to),
-									  )
+										)
 							}`}
 							dateClassName={jobDateStyle}
 							icon={
