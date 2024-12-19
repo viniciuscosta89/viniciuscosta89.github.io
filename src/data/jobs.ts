@@ -17,13 +17,33 @@ export const jobs: JobType[] = [
 		icon: quantumIcon.src,
 		activities: [
 			{
-				en: 'Develop components and features with Next.js, React, Typescript and TailwindCSS',
+				en: 'Develop components, integrations, features with Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query and Zustand',
 				'pt-br':
-					'Desenvolver componentes e features com Next.js, React, Typescript e Tailwind CSS',
+					'Desenvolver componentes, integrações e features com Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query e Zustand',
 			},
 			{
-				en: 'Develop E2E (end-to-end) tests with Cypress',
-				'pt-br': 'Desenvolver testes E2E (end-to-end) com Cypress',
+				en: 'Develop E2E (end-to-end) and component tests with Cypress',
+				'pt-br':
+					'Desenvolver testes E2E (end-to-end) e de componente com Cypress',
+			},
+			{
+				en: 'Create new branches, code reviews and merge requests with GitHub',
+				'pt-br':
+					'Criar novas branches, code reviews e merge requests com GitHub',
+			},
+			{
+				en: 'Manage tasks on Jira',
+				'pt-br': 'Gerenciar tarefas no Jira',
+			},
+			{
+				en: 'Participate in daily standups, sprint planning, sprint reviews and sprint retrospectives',
+				'pt-br':
+					'Participar de standups diários, planejamento de sprint, revisões de sprint e retrospectivas de sprint',
+			},
+			{
+				en: 'Enhancement and evolution of the design system using Storybook',
+				'pt-br':
+					'Melhoria e aprimoramento contínuo do sistema de design utilizando o Storybook',
 			},
 		],
 	},
