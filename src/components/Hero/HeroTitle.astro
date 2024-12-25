@@ -1,5 +1,4 @@
 ---
-import { t } from 'i18next';
 // @ts-expect-error: panda-css missing declaration types
 import { css } from '/styled-system/css';
 import { heroTitleStyles } from './Hero.styles';
@@ -10,9 +9,9 @@ const { name } = Astro.props as HeroTitleProps;
 
 <div class={heroTitleStyles}>
   <div>
-    <span>{t('hero:niceTo')}</span>{' '}
+    <span>Nice to</span>{' '}
     <span class={css({ whiteSpace: { base: 'wrap', md: 'nowrap' } })}>
-      {t('hero:meetYou')}
+      meet you! I'm
     </span>{' '}
     <h1>{name}</h1>.
   </div>

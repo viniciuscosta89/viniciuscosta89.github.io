@@ -2,14 +2,13 @@
 import { Picture } from 'astro:assets';
 import profileDesktop from '@assets/image-profile-desktop.webp';
 import Container from '@components/Container';
-import LanguagePicker from '@components/LanguagePicker';
 import { socialNetworks } from '@data/social-networks';
 import {
-	HeaderGrid,
-	HeaderSocialNetworks,
-	HeaderStyled,
-	HeaderTitle,
-	profileImage,
+  HeaderGrid,
+  HeaderSocialNetworks,
+  HeaderStyled,
+  HeaderTitle,
+  profileImage,
 } from './Header.styles';
 ---
 
@@ -25,11 +24,9 @@ import {
         <strong>costa</strong>
       </HeaderTitle>
 
-      <LanguagePicker />
-
       <HeaderSocialNetworks>
         {
-          socialNetworks.map(({ url, label, logo: Logo }) => (
+          socialNetworks.map(({ id, url, label, logo: Logo }) => (
             <li>
               <a
                 href={url}

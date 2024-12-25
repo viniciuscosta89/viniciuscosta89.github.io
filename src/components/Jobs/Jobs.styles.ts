@@ -91,7 +91,7 @@ export const jobIconContainerStyle = css({
 	bg: 'black.700',
 	display: 'flex',
 	justifyContent: 'center',
-	alignItems: 'center',
+  alignItems: 'center',
 
 	'& img': {
 		borderRadius: '50%',
@@ -103,12 +103,12 @@ export const jobIconContainerStyle = css({
 	},
 
 	'& svg': {
-		borderRadius: '50% !important',
+		borderRadius: '50% !important',		
 		width: '24px  !important',
-		height: '24px  !important',
+		height: '24px  !important',	
 		left: 'initial !important',
-		top: 'initial !important',
-		marginLeft: '0 !important',
-		marginTop: '0 !important',
+    top: 'initial !important',
+    marginLeft: '0 !important',
+    marginTop: '0 !important',	
 	},
 });

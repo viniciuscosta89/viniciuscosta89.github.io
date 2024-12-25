@@ -5,10 +5,9 @@ import emailjs from '@emailjs/browser';
 import { ErrorMessage } from '@hookform/error-message';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AnimatePresence, motion } from 'framer-motion';
-import { t } from 'i18next';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Reaptcha from 'reaptcha';
 import { z } from 'zod';
 // @ts-expect-error: panda-css missing declaration types
@@ -103,13 +102,13 @@ function ContactForm() {
 			viewport={{ once: true }}
 		>
 			<fieldset className={contactFieldsetStyle}>
-				<label htmlFor="name">{t('contact:name')}:</label>
+				<label htmlFor="name">Name:</label>
 				<input
 					className={inputStyle}
 					type="text"
 					id="name"
 					{...register('name')}
-					placeholder={t('contact:name')}
+					placeholder="Name"
 				/>
 				{errors.name && (
 					<span className={errorIcon}>
@@ -124,12 +123,12 @@ function ContactForm() {
 			</fieldset>
 
 			<fieldset className={contactFieldsetStyle}>
-				<label htmlFor="email">{t('contact:email')}:</label>
+				<label htmlFor="email">Email:</label>
 				<input
 					className={inputStyle}
 					id="email"
 					{...register('email')}
-					placeholder={t('contact:email')}
+					placeholder="Email"
 				/>
 				{errors.email && (
 					<motion.span
@@ -158,13 +157,13 @@ function ContactForm() {
 			</fieldset>
 
 			<fieldset className={contactFieldsetTextareaStyle}>
-				<label htmlFor="message">{t('contact:message')}:</label>
+				<label htmlFor="message">Message:</label>
 				<textarea
 					rows={4}
 					className={inputStyle}
 					id="message"
 					{...register('message')}
-					placeholder={t('contact:message')}
+					placeholder="Message"
 				/>
 				{errors.message && (
 					<span className={errorMessageIcon}>
@@ -192,7 +191,6 @@ function ContactForm() {
 					initial={{ opacity: 0, x: -32 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ type: 'spring', delay: 1 }}
-					loading="lazy"
 					alt=""
 				/>
 			</fieldset>
@@ -245,10 +243,10 @@ function ContactForm() {
 						transition={{ type: 'spring' }}
 					>
 						{isSubmitSuccessful
-							? t('contact:messageSent')
+							? "Message sent!"
 							: isSubmitting
-								? t('contact:sendingMessage')
-								: t('contact:sendMessage')}
+							  ? "Sending..."
+							  : "Send message"}
 					</motion.span>
 				</AnimatePresence>
 			</Button>

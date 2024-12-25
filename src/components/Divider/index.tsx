@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
 import { dividerStyle } from './Divider.styles';
+import { motion } from 'framer-motion';
 import type { DividerProps } from './Divider.types';
 
 function Divider({ delay }: DividerProps) {

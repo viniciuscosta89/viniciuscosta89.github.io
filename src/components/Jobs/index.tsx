@@ -28,8 +28,8 @@ const formatDate = (isPortuguese: boolean, date: string): string =>
 		year: 'numeric',
 	}).format(new Date(date));
 
-function Jobs({ jobs, language }: JobsProps) {
-	const isPortugueseLanguage = language === 'pt-BR';
+function Jobs({ jobs }: JobsProps) {
+	// const isPortugueseLanguage = language === 'pt-BR';
 
 	return (
 		<section id="jobs" className={jobsStyle}>
@@ -50,15 +50,11 @@ function Jobs({ jobs, language }: JobsProps) {
 								borderRightColor: 'var(--colors-bg-gray)',
 							}}
 							date={`${capitalizeFirstLetter(
-								formatDate(isPortugueseLanguage, job.when.from),
+								formatDate(false, job.when.from),
 							)} - ${
 								job.when.to === 'Current'
-									? isPortugueseLanguage
-										? 'atual'
-										: 'current'
-									: capitalizeFirstLetter(
-											formatDate(isPortugueseLanguage, job.when.to),
-										)
+									? 'Current'
+									: formatDate(false, job.when.to)
 							}`}
 							dateClassName={jobDateStyle}
 							icon={
@@ -80,15 +76,15 @@ function Jobs({ jobs, language }: JobsProps) {
 							</a>
 
 							<p className={jobRole}>
-								{isPortugueseLanguage ? job.role['pt-br'] : job.role.en}
+								{job.role.en}
 							</p>
 
 							<ul className={jobActivities}>
 								{job.activities.map((activity) => {
-									const activityLanguage = isPortugueseLanguage
-										? activity['pt-br']
-										: activity.en;
-									return <li key={activityLanguage}>{activityLanguage}</li>;
+									// const activityLanguage = isPortugueseLanguage
+									// 	? activity['pt-br']
+									// 	: activity.en;
+									return <li key={activity.en}>{activity.en}</li>;
 								})}
 							</ul>
 						</VerticalTimelineElement>

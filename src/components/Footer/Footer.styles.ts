@@ -13,7 +13,7 @@ export const footerGrid = css({
 	display: 'grid',
 	gridTemplateColumns: {
 		base: '1fr',
-		md: 'repeat(3, auto)',
+		md: 'repeat(2, auto)',
 	},
 	justifyContent: {
 		base: 'center',
