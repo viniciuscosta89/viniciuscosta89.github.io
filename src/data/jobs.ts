@@ -4,8 +4,8 @@ import type { JobType } from '@type/jobs';
 export const jobs: JobType[] = [
 	{
 		id: 5,
-		name: 'Quantum Financial',
-		url: 'https://www.quantumfintech.com/',
+		name: 'Quantum Lending Solutions',
+		url: 'https://www.quantumlends.com/',
 		role: {
 			en: 'Front-end Engineer',
 			'pt-br': 'Desenvolvedor Front-end',
