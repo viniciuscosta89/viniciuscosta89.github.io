@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 export interface ContainerProps {
-	align?: string;
-	bgColor?: string;
+	align?: 'mobileCenter';
+	bgColor?: 'gray' | 'black';
 	children: ReactNode;
-	overflow?: string;
+	overflow?: 'x' | 'y';
 }

@@ -1,8 +1,8 @@
-import Icons from '@components/Icons/';
 import {
-	languagePickerFlag,
 	languagePickerStyle,
+	languagePickerFlag,
 } from './LanguagePicker.styles';
+import Icons from '@components/Icons/';
 
 function LanguagePicker() {
 	return (

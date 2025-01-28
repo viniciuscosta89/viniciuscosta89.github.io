@@ -1,1 +1,33 @@
-@layer reset, base, tokens, recipes, utilities;
+@import 'tailwindcss';
+
+/* @layer reset, base, tokens, recipes, utilities; */
+
+@theme {
+  --primary: var(--color-red-400);
+  --bg: var(--color-gray-800);
+  --bg-gray: var(--color-gray-700);
+  --text: var(--color-white);
+  --disabled: var(--color-gray-400);
+
+  --font-sans: 'Space Grotesk Variable', apple-system, sans-serif;
+
+  --text--4: 2.5rem;
+  --text--2: 0.78rem;
+  --text--1: 1rem;
+  --text-0: 1.125rem;
+  --text-1: 1.35rem;
+  --text-2: 1.5rem;
+  --text-3: 2rem;
+  --text-4: 2.5rem;
+  --text-5: 3rem;
+  --text-6: 3.36rem;
+  --text-7: 4rem;
+  --text-8: 4.5rem;
+  --text-9: 5.5rem;
+  --text-10: 6.97rem;
+
+  --text-paragraph: var(--text-0);
+  --text-md: var(--text-2);
+  --text-lg: var(--text-5);
+  --text-xl: var(--text-9);
+}

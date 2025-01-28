@@ -6,6 +6,5 @@ coverage
 **/*.ts
 **/*.mjs
 **/*.mts
-**/*.tsx
 node_modules
 assets

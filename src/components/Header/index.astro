@@ -3,32 +3,25 @@ import { Picture } from 'astro:assets';
 import profileDesktop from '@assets/image-profile-desktop.webp';
 import Container from '@components/Container';
 import { socialNetworks } from '@data/social-networks';
-import {
-  HeaderGrid,
-  HeaderSocialNetworks,
-  HeaderStyled,
-  HeaderTitle,
-  profileImage,
-} from './Header.styles';
+import { motion } from 'framer-motion';
 ---
 
-<HeaderStyled
-  initial={{ opacity: 0, y: -32 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
+<motion.header  
+  className="text-white leading-none mb-10 md:mb-[5.62rem] lg:mb-32 overflow-x-hidden md:overflow-x-visible relative before:content[''] before:bg-[url(/src/assets/pattern-rings.svg)] before:block before:md:none before:lg:block before:absolute before:-left-full before:lg:left-[-5%] before:top-[35%] before:lg:top-[185%] before:z-auto before:w-[530px] before:h-[129px] after:content-[''] after:bg-[url(/src/assets/pattern-circle.svg)] after:block after:md:none after:lg:block after:absolute after:right-[-18%] after:lg:right-[38%] after:2xl:right-[43%] after:bottom-0 after:lg:bottom-[-850%] after:z-[6] after:w-[129px] after:h-[129px]"
 >
-  <Container>
-    <HeaderGrid>
-      <HeaderTitle>
-        <span>vinicius</span>
+  <Container align='mobileCenter'>
+    <div class="flex flex-col md:flex-row gap-5 justify-between items-center pr-0 lg:pr-[1.84rem] pt-[2.44rem] md:pt-8 lg:pt-[2.44rem] mb-12 md:mb-0 relative z-10">
+      <div class="flex items-center text-[2rem] tracking-[-0.02081rem] leading-none">
+        <span class="font-light">vinicius</span>
         <strong>costa</strong>
-      </HeaderTitle>
+      </div>
 
-      <HeaderSocialNetworks>
+      <ul class="flex items-center gap-8 relative">
         {
           socialNetworks.map(({ id, url, label, logo: Logo }) => (
             <li>
               <a
+                class="block transition-all duration-300 ease-in-out hover:text-red-500 hover:scale-[1.15]"
                 href={url}
                 title={`My ${label} profile`}
                 target="_blank"
@@ -39,14 +32,14 @@ import {
             </li>
           ))
         }
-      </HeaderSocialNetworks>
-    </HeaderGrid>
+      </ul>
+    </div>
 
     <Picture
-      class={profileImage}
+      class="block relative md:absolute right-0 -md:right-8 lg:right-0 top-0 -mt-4 md:mt-0 mx-auto max-w-[10.88794rem] md:max-w-[20.125rem] lg:max-w-[27.8125rem] lg:z-[5]"
       alt="AI rendered Vinicius Costa"
       widths={[375, 768, 1140]}
       src={profileDesktop}
     />
   </Container>
-</HeaderStyled>
+</motion.header>

@@ -22,6 +22,7 @@
     "@fontsource-variable/space-grotesk": "^5.1.0",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.9.1",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vercel/speed-insights": "^1.1.0",
@@ -35,6 +36,7 @@
     "reaptcha": "^1.12.1",
     "sharp": "^0.33.5",
     "styled-components": "^6.1.13",
+    "tailwindcss": "^4.0.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
@@ -60,6 +62,7 @@
     "postcss-html": "^1.7.0",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "stylelint": "^16.12.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^36.0.1",
