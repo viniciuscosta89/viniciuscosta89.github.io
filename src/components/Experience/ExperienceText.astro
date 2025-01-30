@@ -1,14 +1,13 @@
 ---
-import { experienceTextStyle } from './Experience.styles';
 
 interface Props {
-  yearsOfExperience: number;
+	yearsOfExperience: number;
 }
 
 const { yearsOfExperience } = Astro.props;
 ---
 
-<p class={experienceTextStyle}>
+<p class="text-neutral-200 text--1 lg:text-0 font-normal leading-[1.62] lg:leading-[1.55]">
   <Fragment>
     {
       yearsOfExperience < 2
