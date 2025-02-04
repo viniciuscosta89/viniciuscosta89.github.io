@@ -33,7 +33,7 @@
 
 @layer base {
   :root {
-    @apply leading-[1.5] font-medium;
+    @apply selection:bg-primary leading-[1.5] font-medium selection:text-neutral-900;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -156,5 +156,32 @@
   [tabindex='-1'] {
     outline: none !important;
     box-shadow: none !important;
+  }
+}
+
+@layer components {
+  @media (width >= 64rem) {
+    .project-item {
+      grid-template-areas:
+        'img'
+        'name'
+        'stack';
+    }
+
+    .project-actions {
+      grid-area: img;
+    }
+
+    .project-img {
+      grid-area: img;
+    }
+
+    .project-name {
+      grid-area: name;
+    }
+
+    .project-stack {
+      grid-area: stack;
+    }
   }
 }

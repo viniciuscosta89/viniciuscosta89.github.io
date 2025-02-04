@@ -69,7 +69,7 @@ import { css } from '/styled-system/css';
         />
         <div class="col-start-[-1] row-start-1">
           <Container>
-            <Divider client:load className="md:none" />
+            <Divider client:load className="md:hidden" />
           </Container>
         </div>
       </div>
@@ -79,14 +79,9 @@ import { css } from '/styled-system/css';
       <Project.Root>
         <Container>
           <div
-            class={css({
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBlockEnd: { base: '2.5rem', lg: '5rem' },
-            })}
+            class="flex justify-between items-center mb-10 lg:mb-20"            
           >
-            <SectionTitle text="Contact" client:visible />
+            <SectionTitle text="Projects" client:visible />
             <Link url="#contact" hasAnimation client:visible>Contact Me</Link>
           </div>
 
