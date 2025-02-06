@@ -1,37 +1,21 @@
-import type { ReactNode } from 'react';
-// @ts-expect-error: panda-css missing declaration types
-import { css } from '/styled-system/css';
 import { motion } from 'framer-motion';
+import type { ReactNode } from 'react';
 
 interface ContactTextProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
-const contactTextStyle = css({
-	color: 'black.100',
-	fontSize: {
-		base: '-1',
-		md: '0',
-	},
-	lineHeight: '1.62',
-	marginBlockEnd: '3.12rem',
-	textAlign: {
-		base: 'center',
-		lg: 'left',
-	},
-});
-
 function ContactText({ children }: ContactTextProps) {
-	return (
-		<motion.p
-			className={contactTextStyle}
-			initial={{ opacity: 0, x: -32 }}
-			animate={{ opacity: 1, x: 0 }}
-			transition={{ type: 'spring' }}
-		>
-			{children}
-		</motion.p>
-	);
+  return (
+    <motion.p
+      className="text--1 md:text-0 mb-[3.12rem] text-center leading-[1.62] text-neutral-100 lg:text-left"
+      initial={{ opacity: 0, x: -32 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ type: 'spring' }}
+    >
+      {children}
+    </motion.p>
+  );
 }
 
 export default ContactText;

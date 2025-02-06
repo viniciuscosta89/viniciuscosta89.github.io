@@ -160,6 +160,28 @@
 }
 
 @layer components {
+  .form-fieldset {
+    grid-template-areas:
+      'input'
+      'errors';
+  }
+
+  .form-input {
+    grid-area: input;
+  }
+
+  .form-errors {
+    grid-area: errors;
+  }
+
+  .form-input__error-icon {
+    grid-area: input;
+  }
+
+  .form-input__error-message {
+    grid-area: input;
+  }
+
   @media (width >= 64rem) {
     .project-item {
       grid-template-areas:
