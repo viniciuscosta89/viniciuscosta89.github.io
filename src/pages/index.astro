@@ -16,19 +16,6 @@ import { jobs } from '@data/jobs';
 import { projects } from '@data/projects';
 import Layout from '@layouts/Layout.astro';
 import { motion } from 'framer-motion';
-// @ts-expect-error PandaCSS typing error
-import { css } from '/styled-system/css';
-
-const patternRingsStyle = css({
-	position: 'relative',
-	display: {
-		base: 'block',
-	},
-	gridArea: '1/-1',
-	maxWidth: 'unset',
-	right: '-35%',
-	zIndex: '-1',
-});
 ---
 
 <Layout>
@@ -67,45 +54,20 @@ const patternRingsStyle = css({
       </Experience.Root>
 
       <div
-        class={css({
-          position: 'relative',
-          overflowX: 'hidden',
-          display: {
-            base: 'grid',
-          },
-          alignItems: 'center',
-          my: {
-            base: '-6rem',
-            md: '-6.5rem -2.5rem',
-            lg: '-6.5rem 0',
-          },
-
-          '& hr': {
-            display: {
-              md: 'none',
-            },
-          },
-
-          '& img': {
-            right: {
-              base: 'inherit',
-              md: '-75%',
-            },
-          },
-        })}
+        class="relative overflow-x-hidden grid items-center -my-24 md:my-[-6.5rem_-2.5rem] lg:my-[-6.5rem_0]"        
       >
         <motion.img
           src={patternRings.src}
           alt=""
-          className={patternRingsStyle}
+          className="relative block col-start-[-1] row-start-1 max-w-[unset] right-[0] z-[-1] md:right-[-75%] "
           initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: 'spring' }}
           client:visible
         />
-        <div class={css({ gridArea: '1/-1' })}>
+        <div class="col-start-[-1] row-start-1">
           <Container>
-            <Divider client:load />
+            <Divider client:load className="md:hidden" />
           </Container>
         </div>
       </div>
@@ -115,14 +77,9 @@ const patternRingsStyle = css({
       <Project.Root>
         <Container>
           <div
-            class={css({
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBlockEnd: { base: '2.5rem', lg: '5rem' },
-            })}
+            class="flex justify-between items-center mb-10 lg:mb-20"            
           >
-            <SectionTitle text="Contact" client:visible />
+            <SectionTitle text="Projects" client:visible />
             <Link url="#contact" hasAnimation client:visible>Contact Me</Link>
           </div>
 
@@ -191,7 +148,7 @@ const patternRingsStyle = css({
         </Container>
       </Contact.Root>
 
-      <section class={css({ backgroundColor: 'black.700' })}>
+      <section class="bg-neutral-800">
         <Container>
           <Divider client:load />
         </Container>

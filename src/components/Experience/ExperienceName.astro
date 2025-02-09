@@ -1,11 +1,10 @@
 ---
-import { experienceNameStyle } from './Experience.styles';
 
 interface Props {
-  name: string;
+	name: string;
 }
 
 const { name } = Astro.props;
 ---
 
-<p class={experienceNameStyle}>{name}</p>
+<p class="text-white text-5 font-bold tracking-[-0.0625rem] lg:tracking-[-0.09375rem] leading-[1.25] lg:leading-[1.16]">{name}</p>

@@ -1,1 +1,209 @@
-@layer reset, base, tokens, recipes, utilities;
+@import 'tailwindcss';
+
+/* @layer reset, base, tokens, recipes, utilities; */
+
+@theme {
+  --color-primary: var(--color-red-500);
+  --color-bg: var(--color-neutral-900);
+  --color-bg-gray: var(--color-neutral-800);
+  --color-text: var(--color-white);
+  --color-disabled: var(--color-neutral-400);
+
+  --font-sans: 'Space Grotesk Variable', apple-system, sans-serif;
+
+  --text--2: 0.78rem;
+  --text--1: 1rem;
+  --text-0: 1.125rem;
+  --text-1: 1.35rem;
+  --text-2: 1.5rem;
+  --text-3: 2rem;
+  --text-4: 2.5rem;
+  --text-5: 3rem;
+  --text-6: 3.36rem;
+  --text-7: 4rem;
+  --text-8: 4.5rem;
+  --text-9: 5.5rem;
+  --text-10: 6.97rem;
+
+  --text-paragraph: var(--text-0);
+  --text-md: var(--text-2);
+  --text-lg: var(--text-5);
+  --text-xl: var(--text-9);
+}
+
+@layer base {
+  :root {
+    @apply selection:bg-primary leading-[1.5] font-medium selection:text-neutral-900;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    @apply box-border h-full;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body * {
+      animation-duration: 0s !important;
+      animation-delay: 0s !important;
+    }
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  body {
+    @apply bg-bg text-text overflow-x-hidden font-sans;
+  }
+
+  blockquote,
+  body,
+  figure,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  li,
+  ol,
+  p,
+  pre,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul:where([class]) {
+    list-style: none;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    color: inherit;
+    letter-spacing: inherit;
+    font: inherit;
+  }
+
+  input[type='text'],
+  textarea {
+    width: 100%;
+  }
+
+  fieldset {
+    padding: 0;
+    border: none;
+  }
+
+  legend {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea {
+    border: none;
+  }
+
+  button * {
+    pointer-events: none;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  embed,
+  iframe,
+  img,
+  object,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  noscript {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  [tabindex='-1'] {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@layer components {
+  .form-fieldset {
+    grid-template-areas:
+      'input'
+      'errors';
+  }
+
+  .form-input {
+    grid-area: input;
+  }
+
+  .form-errors {
+    grid-area: errors;
+  }
+
+  .form-input__error-icon {
+    grid-area: input;
+  }
+
+  .form-input__error-message {
+    grid-area: input;
+  }
+
+  @media (width >= 64rem) {
+    .project-item {
+      grid-template-areas:
+        'img'
+        'name'
+        'stack';
+    }
+
+    .project-actions {
+      grid-area: img;
+    }
+
+    .project-img {
+      grid-area: img;
+    }
+
+    .project-name {
+      grid-area: name;
+    }
+
+    .project-stack {
+      grid-area: stack;
+    }
+  }
+}

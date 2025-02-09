@@ -47,30 +47,32 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
-- [Astro](https://astro.build) - Astro is the all-in-one web framework designed for speed.
+- [Astro](https://astro.build) - Astro is the all-in-one web framework designed for speed
 - [React](https://reactjs.org/) - JS library
 - [Vite](https://vitejs.dev) - Frontend Tooling
-- [Panda CSS](https://panda-css.com) - CSS-in-JS with build time generated styles, RSC compatible, multi-variant support, and best-in-class developer experience
+- [TailwindCSS](https://panda-css.com) - Rapidly build modern websites without ever leaving your HTML
 - [Typescript](https://www.typescriptlang.org) - JavaScript with syntax for types
 - [Zod](https://zod.dev) - TypeScript-first schema validation with static type inference
 - [React Hook Form](https://www.react-hook-form.com) - Performant, flexible and extensible forms with easy-to-use validation
-- [Framer Motion](https://www.framer.com/motion/) - A production-ready motion library for React
+- [Motion](https://motion.dev/) - A modern animation library for JavaScript and React
 - [reaptcha](https://github.com/sarneeh/reaptcha) - Google reCAPTCHA v2 for React
 
 ### What I learned
 
-It was my first time developing with Panda CSS. Since Stitches isn't maintained anymore and styled-components doesn't work properly with Astro, I need an alternative for the CSS-in-JS approach.
+~~It was my first time developing with Panda CSS. Since Stitches isn't maintained anymore and styled-components doesn't work properly with Astro, I need an alternative for the CSS-in-JS approach.~~
+
+After months working with TailwindCSS, I decided to move this project styling from Panda CSS to TailwindCSS.
 
 ### Continued development
 
-I like to use Composition Pattern for my components since some weeks ago. It's a good approach to avoid "prop drilling". I want to dive deeper into the composition pattern. And take a look if Panda CSS is the better solution for CSS-in-JS to work with Astro.
+I like to use Composition Pattern for my components since some weeks ago. It's a good approach to avoid "prop drilling". I want to dive deeper into the composition pattern. ~~And take a look if Panda CSS is the better solution for CSS-in-JS to work with Astro.~~
 
 ### Useful resources
 
-- Documentations from React, Astro, Panda CSS, Vite, Zod, React Hoof Form, Framer Motion and reaptcha.
+- Documentations from React, Astro, TailwindCSS, Vite, Zod, React Hoof Form, Motion and reaptcha.
 
 ## Author
 
-- Website - [Vinicius Costa](https://viniciuscosta89-github-io.vercel.app)
+- Website - [Vinicius Costa](https://viniciuscosta.dev/)
 - GitHub - [https://github.com/viniciuscosta89](https://github.com/viniciuscosta89)
 - Frontend Mentor - [@viniciuscosta89](https://www.frontendmentor.io/profile/viniciuscosta89)

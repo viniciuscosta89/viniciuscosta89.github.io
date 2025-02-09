@@ -1,9 +1,7 @@
 ---
-// @ts-expect-error: panda-css missing declaration types
-import { cx } from '/styled-system/css';
-import { projectActionsStyle } from './Projects.styles';
+
 ---
 
-<div class={cx(projectActionsStyle, 'project__actions')}>
+<div class="lg:bg-neutral-900/90 flex lg:flex-col gap-8 lg:justify-center lg:items-center lg:opacity-0 lg:invisible lg:w-full lg:h-full transition-all duration-300 group-hover:lg:opacity-100 group-hover:lg:visible project-actions">
   <slot />
 </div>
