@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@pandacss/dev": "^0.49.0",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "@types/styled-system__css": "^5.0.21",
     "@typescript-eslint/eslint-plugin": "^8.18.1",

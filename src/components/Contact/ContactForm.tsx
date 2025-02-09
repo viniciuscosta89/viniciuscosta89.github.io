@@ -10,7 +10,6 @@ import { useForm } from 'react-hook-form';
 import Reaptcha from 'reaptcha';
 
 import patternRings from '@assets/pattern-rings.svg';
-import { errorMessage } from './Contact.styles';
 import { type ContactSchema, contactSchema } from './schema';
 
 function ContactForm() {
@@ -169,7 +168,7 @@ function ContactForm() {
           name="g-recaptcha-response"
           render={({ message }) => (
             <motion.p
-              className={errorMessage}
+              className="text--2 form-errors justify-self-end text-red-400"
               initial={{ opacity: 0, x: 32 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ type: 'spring' }}
