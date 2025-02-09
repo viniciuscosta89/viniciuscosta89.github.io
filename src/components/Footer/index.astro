@@ -1,27 +1,21 @@
 ---
 import Container from '@components/Container';
 import { socialNetworks } from '@data/social-networks';
-import {
-  footerGrid,
-  footerStyle,
-  footerTitleStyle,
-  socialNetworksStyle,
-} from './Footer.styles';
 ---
 
-<footer class={footerStyle}>
+<footer class="bg-neutral-800 py-[2.44rem 3.75rem] md:py-8">
   <Container>
-    <div class={footerGrid}>
-      <div class={footerTitleStyle}>
-        <span>vinicius</span>
-        <strong>costa</strong>
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center md:justify-between items-center gap-5 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start text-3 tracking-[-0.02081rem] leading-none">
+        <span class="font-light">vinicius</span>
+        <strong class="font-bold">costa</strong>
       </div>
 
-      <ul class={socialNetworksStyle}>
+      <ul class="flex items-center justify-end gap-8 relative">
         {
           socialNetworks.map(({ url, label, logo: Logo }) => (
             <li>
-              <a href={url} title={`My ${label} profile`}>
+              <a class="block transition duration-300 hover:text-red-500 hover:scale-[1.15]" href={url} title={`My ${label} profile`}>
                 <Logo />
               </a>
             </li>
