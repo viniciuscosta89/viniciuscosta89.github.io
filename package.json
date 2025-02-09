@@ -21,8 +21,6 @@
     "@fontsource-variable/space-grotesk": "^5.1.1",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.10.0",
-    "@sentry/astro": "^8.54.0",
-    "@spotlightjs/astro": "^2.4.3",
     "@tailwindcss/vite": "^4.0.5",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
