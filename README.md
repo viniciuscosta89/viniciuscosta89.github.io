@@ -61,7 +61,7 @@ Users should be able to:
 
 ~~It was my first time developing with Panda CSS. Since Stitches isn't maintained anymore and styled-components doesn't work properly with Astro, I need an alternative for the CSS-in-JS approach.~~
 
-After months working with TailwindCSS, I decided to move this project styling from Panda CSS to TailwindCSS.
+After months of working with TailwindCSS, I moved this project styling from Panda CSS to TailwindCSS.
 
 ### Continued development
 
