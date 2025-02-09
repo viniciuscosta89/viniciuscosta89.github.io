@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-/* @layer reset, base, tokens, recipes, utilities; */
-
 @theme {
   --color-primary: var(--color-red-500);
   --color-bg: var(--color-neutral-900);
