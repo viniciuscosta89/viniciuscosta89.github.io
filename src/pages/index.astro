@@ -5,7 +5,7 @@ import Container from '@components/Container';
 import Divider from '@components/Divider';
 import { Experience } from '@components/Experience';
 import Footer from '@components/Footer/index.astro';
-import Header from '@components/Header/index.astro';
+import Header from '@components/Header';
 import { Hero } from '@components/Hero';
 import Jobs from '@components/Jobs';
 import Link from '@components/Link';
@@ -16,11 +16,22 @@ import { jobs } from '@data/jobs';
 import { projects } from '@data/projects';
 import Layout from '@layouts/Layout.astro';
 import { motion } from 'framer-motion';
+import { FaProjectDiagram } from 'react-icons/fa';
+import { FaIdCard, FaStar } from 'react-icons/fa6';
+import Icons from '../components/Icons';
+import { VerticalNav } from '../components/VerticalNav';
 ---
 
 <Layout>
   <Fragment>
-    <Header />
+    <Header client:load />
+
+    <VerticalNav.Root client:load>
+      <VerticalNav.Item id="experience" client:only><FaStar  className="text-2xl"/> <span>Experience</span></VerticalNav.Item>
+      <VerticalNav.Item id="jobs" client:only><Icons.Work className="h-6" /> <span>Jobs</span></VerticalNav.Item>
+      <VerticalNav.Item id="projects" client:only><FaProjectDiagram  className="text-2xl" /> <span>Projects</span></VerticalNav.Item>
+      <VerticalNav.Item id="contact" client:only isLast><FaIdCard  className="text-2xl" /> <span>Contact</span></VerticalNav.Item>
+    </VerticalNav.Root>
     <main>
       <Hero.Root>
         <Hero.Title name="Vinicius Costa" />

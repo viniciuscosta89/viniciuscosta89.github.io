@@ -23,7 +23,7 @@ function Jobs({ jobs }: JobsProps) {
   return (
     <section
       id="jobs"
-      className="relative py-20 md:py-[5rem_6.25rem] lg:py-[5rem_8.70rem]"
+      className="relative scroll-mt-0 py-20 md:py-[5rem_6.25rem] lg:py-[5rem_8.70rem]"
     >
       <Container>
         <VerticalTimeline
