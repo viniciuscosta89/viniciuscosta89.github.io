@@ -155,6 +155,10 @@
     outline: none !important;
     box-shadow: none !important;
   }
+
+  section {
+    @apply scroll-mt-16;
+  }
 }
 
 @layer components {
