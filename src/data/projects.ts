@@ -2,6 +2,24 @@ import type { ProjectsType } from '@type/projects';
 
 export const projects: ProjectsType[] = [
 	{
+		imgPath: '/src/assets/projects/thumbnail-multi-step-form-next-large.webp',
+		alt: 'Multi-step form screenshot',
+		name: 'Multi-step form',
+		live: 'https://multi-step-form-next-viniciuscosta89s-projects.vercel.app/',
+		code: 'https://github.com/viniciuscosta89/multi-step-form-next',
+		stack: [
+			'Next.js',
+			'Zustand',
+			'TypeScript',
+			'Zod',
+			'React Hook Form',
+			'shadcn/ui',
+			'Motion',
+			'Cypress',
+			'Biome JS'
+		],
+	},
+	{
 		imgPath: '/src/assets/projects/thumbnail-devjobs-web-app-large.webp',
 		alt: 'Devjobs web app screenshot',
 		name: 'Devjobs web app',
