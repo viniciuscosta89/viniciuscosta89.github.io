@@ -16,7 +16,7 @@ export const projects: ProjectsType[] = [
 			'shadcn/ui',
 			'Motion',
 			'Cypress',
-			'Biome JS'
+			'Biome JS',
 		],
 	},
 	{
