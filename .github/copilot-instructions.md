@@ -14,13 +14,13 @@
 - `src/layouts/Layout.astro`: Global layout, meta tags, fonts, analytics.
 
 ## Developer Workflows
-- **Start Dev Server:** `pnpm dev` or `pnpm start`
-- **Build:** `pnpm build` (type checks + build)
-- **Preview:** `pnpm preview`
-- **Lint:** `pnpm lint` (Biome)
-- **Format:** `pnpm format` (Biome)
-- **Format, lint and organize imports:** `pnpm check` (Biome)
-- **Cypress:** `pnpm cypress:open` (E2E/component tests)
+**Start Dev Server:** `pnpm dev` or `pnpm start`
+**Build:** `pnpm build` (type checks + build)
+**Preview:** `pnpm preview`
+**Lint:** `pnpm lint` (Biome, writes fixes to files in `src/**/*.{js,ts,jsx,tsx,astro}`)
+**Format:** `pnpm format` (Biome, writes formatting to files in `src/**/*.{js,ts,jsx,tsx,astro}`)
+**Check:** `pnpm check` (Biome, runs all checks and organizes imports for files in `src/**/*.{js,ts,jsx,tsx,astro}`)
+**Cypress:** `pnpm cypress:open` (E2E/component tests)
 
 ## Patterns & Conventions
 - **Composition:** Prefer `.Root`/`.Item` pattern (see VerticalNav, Hero, Project).
@@ -37,11 +37,11 @@
 - **Astro-i18next:** Locale detection/translation loading.
 
 ## Project-Specific Notes
-- **Trusted Dependencies:** Only `sharp` in `package.json`.
-- **Testing:** Cypress set up, but no test files present.
-- **Linting:** Biome, ESLint, Prettier; Biome relaxed for `.astro` files.
-- **TypeScript:** Types in `src/types/`.
-- **Mobile-First:** Responsive layouts/components.
+**Trusted Dependencies:** Only `sharp` in `package.json`.
+**Testing:** Cypress set up, but no test files present.
+**Linting & Formatting:** Biome is the primary tool, configured via `biome.json` to include files in `src/**/*.{js,ts,jsx,tsx,astro,css}`.
+**TypeScript:** Types in `src/types/`.
+**Mobile-First:** Responsive layouts/components.
 
 ## Example: Add a New Project
 1. Add to `src/data/projects.ts`.
