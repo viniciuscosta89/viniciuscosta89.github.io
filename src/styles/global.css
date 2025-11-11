@@ -31,7 +31,7 @@
 
 @layer base {
 	:root {
-		@apply selection:bg-primary leading-[1.5] font-medium selection:text-neutral-900;
+		@apply selection:bg-primary leading-normal font-medium selection:text-neutral-900;
 		font-synthesis: none;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;

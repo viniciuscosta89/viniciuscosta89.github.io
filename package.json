@@ -8,7 +8,9 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+		"lint": "biome lint --write",
+		"format": "biome format --write",
+		"check": "biome check --write",
 		"cypress:open": "cypress open"
 	},
 	"dependencies": {
