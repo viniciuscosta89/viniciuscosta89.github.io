@@ -19,7 +19,7 @@
 - **Preview:** `pnpm preview`
 - **Lint:** `pnpm lint` (Biome)
 - **Format:** `pnpm format` (Biome)
-- **Format, lint and organize imports:** `pnpm check` (Biome)
+- **Format, lint, and organize imports:** `pnpm check` (Biome)
 - **Cypress:** `pnpm cypress:open` (E2E/component tests)
 
 ## Patterns & Conventions
