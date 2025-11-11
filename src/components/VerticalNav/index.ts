@@ -1,8 +1,7 @@
-import VerticalNavItem from "./VerticalNavItem";
-import VerticalNavRoot from "./VerticalNavRoot";
+import VerticalNavItem from './VerticalNavItem';
+import VerticalNavRoot from './VerticalNavRoot';
 
 export const VerticalNav = {
 	Root: VerticalNavRoot,
-	Item: VerticalNavItem
-}
-
+	Item: VerticalNavItem,
+};
