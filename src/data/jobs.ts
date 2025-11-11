@@ -134,7 +134,7 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end',
 		},
 		when: {
-			from: 'Ago 2016',
+			from: 'Aug 2016',
 			to: 'Jun 2018',
 		},
 		activities: [

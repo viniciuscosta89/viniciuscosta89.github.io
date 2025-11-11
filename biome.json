@@ -4,7 +4,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"complexity": {
+				"noImportantStyles": "off"
+			}
 		}
 	},
 	"javascript": {
@@ -13,23 +16,17 @@
 		}
 	},
 	"css": {
-		"parser": {}
-	},
-	"overrides": [
-		{
-			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
-			"linter": {
-				"rules": {
-					"style": {
-						"useConst": "off",
-						"useImportType": "off"
-					},
-					"correctness": {
-						"noUnusedVariables": "off",
-						"noUnusedImports": "off"
-					}
-				}
-			}
+		"parser": {
+			"tailwindDirectives": true
 		}
-	]
+	},
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"formatter": {
+			"indentScriptAndStyle": true
+		}
+	},
+	"files": {
+		"includes": ["./src/**/*.{js,ts,jsx,tsx,astro,css}"]
+	}
 }

@@ -8,7 +8,9 @@
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "biome check --write .",
+		"lint": "biome lint --write",
+		"format": "biome format --write",
+		"check": "biome check --write",
 		"cypress:open": "cypress open"
 	},
 	"dependencies": {
