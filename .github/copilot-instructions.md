@@ -31,6 +31,37 @@
 - **i18n:** Text from translation JSONs in `public/locales/`, managed by astro-i18next.
 - **Data Flow:** Static data from `src/data/` mapped into UI.
 
+## Git Conventions
+Follow [Conventional Commits](https://www.conventionalcommits.org/) for all commit messages, branch names, and PR titles.
+
+**Commit message format:** `<type>(<scope>): <description>`
+- **Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `ci`
+- **Scope:** optional, refers to the affected area (e.g., `contact`, `hero`, `i18n`, `deps`)
+- **Body:** always include a descriptive body explaining *what* changed and *why*. Separate from the subject with a blank line.
+- **Examples:**
+  ```
+  feat(contact): add recaptcha validation
+
+  Integrate Google reCAPTCHA v3 to prevent spam submissions on the
+  contact form. Token is verified server-side before sending via EmailJS.
+  ```
+  ```
+  fix(hero): correct animation timing
+
+  Framer Motion entrance animation was completing too quickly on mobile.
+  Increased duration and adjusted easing for a smoother experience.
+  ```
+  ```
+  chore(deps): bump astro to v5
+
+  Update Astro and related integrations to v5. Resolves deprecation
+  warnings introduced in v4.x and improves build performance.
+  ```
+
+**Branch names:** `<type>/<short-description>` (e.g., `feat/add-dark-mode`, `fix/contact-form-error`)
+
+**PR titles:** same format as commit messages.
+
 ## Integration Points
 - **EmailJS:** Contact form submissions (`ContactForm.tsx`).
 - **Vercel Analytics:** Via `@vercel/speed-insights/astro` in layout.
