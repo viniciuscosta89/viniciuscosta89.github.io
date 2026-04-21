@@ -49,5 +49,13 @@
 		"typescript": "^5.9.3",
 		"vite": "^6.4.2"
 	},
-	"packageManager": "pnpm@10.33.0+sha256.bfcc1bcbad279b13a516c446a75b3c58b6904b45d57a1951411015e50b751a80"
+	"packageManager": "pnpm@10.33.0+sha256.bfcc1bcbad279b13a516c446a75b3c58b6904b45d57a1951411015e50b751a80",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"cypress",
+			"esbuild",
+			"react-vertical-timeline-component",
+			"sharp"
+		]
+	}
 }
