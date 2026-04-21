@@ -2,6 +2,9 @@
 	"name": "viniciuscosta89.github.io",
 	"type": "module",
 	"version": "2.0.0",
+	"engines": {
+		"node": ">=20"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
