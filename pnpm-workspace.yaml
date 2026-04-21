@@ -1,2 +1,5 @@
 allowBuilds:
+  cypress: true
   esbuild: true
+  react-vertical-timeline-component: true
+  sharp: true
