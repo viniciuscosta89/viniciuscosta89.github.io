@@ -14,7 +14,8 @@
 		"lint": "biome lint --write",
 		"format": "biome format --write",
 		"check": "biome check --write",
-		"cypress:open": "cypress open"
+		"cypress:open": "cypress open",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.8",
@@ -50,7 +51,8 @@
 		"cypress": "^13.17.0",
 		"postcss-html": "^1.8.1",
 		"typescript": "^5.9.3",
-		"vite": "^6.4.2"
+		"vite": "^6.4.2",
+		"vitest": "^4.1.11"
 	},
 	"packageManager": "pnpm@11.25.0"
 }
