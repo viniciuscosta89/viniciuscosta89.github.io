@@ -3,10 +3,10 @@
 Guidance for Claude Code when working in this repo.
 
 ## Project Overview
-Personal portfolio site for Vinicius Costa. Astro ^6 (static output) with React 18 islands for interactive UI, TailwindCSS ^4, TypeScript ^5. Internationalization for `en-US`/`pt-BR` is present via astro-i18next, but see the caveat below — it isn't fully wired up.
+Personal portfolio site for Vinicius Costa. Astro ^7 (static output) with React 18 islands for interactive UI, TailwindCSS ^4, TypeScript ^5. Internationalization for `en-US`/`pt-BR` is present via astro-i18next, but see the caveat below — it isn't fully wired up.
 
 ## Tooling
-- **Package manager:** pnpm 11 (pinned via `packageManager` in `package.json`). `engines.node` says `>=20`, but Astro ^6 itself requires Node >=22.12 to run `dev`/`build` — use the version in `.nvmrc` (24).
+- **Package manager:** pnpm 11 (pinned via `packageManager` in `package.json`). `engines.node` requires `>=22.12.0`, matching what Astro ^7 itself needs to run `dev`/`build` — use the version in `.nvmrc` (24).
 - **`pnpm-workspace.yaml`:** holds the `allowBuilds` allowlist (cypress, esbuild, react-vertical-timeline-component, sharp) — this is where pnpm now reads that setting; it's no longer read from a `"pnpm"` key in `package.json`.
 - **Scripts:** `pnpm dev`/`start` (dev server), `pnpm build` (`astro check && astro build`), `pnpm preview`, `pnpm lint`/`format`/`check` (Biome 2, writes fixes in place), `pnpm cypress:open`.
 - **Linting/formatting:** Biome is the only tool (`biome.json`, scoped to `src/**/*.{js,ts,jsx,tsx,astro,css}`). No ESLint.
