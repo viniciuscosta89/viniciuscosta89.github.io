@@ -4,7 +4,7 @@
 - Personal portfolio site built with Astro ^6, React 18 (islands), and TailwindCSS ^4, in TypeScript ^5.
 - Internationalization (i18n) for `en-US` and `pt-BR` via astro-i18next (see caveat below — not fully wired up).
 - Component-driven architecture: Astro for layouts/pages, React for interactive UI.
-- Package manager: pnpm 11 (pinned via `packageManager`). `engines.node` says `>=20`, but Astro ^6 itself requires Node >=22.12 to run `dev`/`build` — use the version in `.nvmrc` (22).
+- Package manager: pnpm 11 (pinned via `packageManager`). `engines.node` says `>=20`, but Astro ^6 itself requires Node >=22.12 to run `dev`/`build` — use the version in `.nvmrc` (24).
 
 ## Key Directories & Files
 - `src/components/`: UI components by feature (Contact, Experience, Project, etc.)
