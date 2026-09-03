@@ -1,3 +1,6 @@
+# Not an actual monorepo — this field only exists because Vercel's deploy
+# pins to pnpm 9.x for this project, and pnpm 9 hard-errors on a
+# pnpm-workspace.yaml with no `packages` field. Do not remove.
 packages:
   - '.'
 
