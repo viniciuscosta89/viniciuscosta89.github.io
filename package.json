@@ -14,7 +14,8 @@
 		"lint": "biome lint --write",
 		"format": "biome format --write",
 		"check": "biome check --write",
-		"cypress:open": "cypress open"
+		"cypress:open": "cypress open",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.8",
@@ -50,15 +51,8 @@
 		"cypress": "^13.17.0",
 		"postcss-html": "^1.8.1",
 		"typescript": "^5.9.3",
-		"vite": "^6.4.2"
+		"vite": "^6.4.2",
+		"vitest": "^4.1.11"
 	},
-	"packageManager": "pnpm@10.33.0+sha256.bfcc1bcbad279b13a516c446a75b3c58b6904b45d57a1951411015e50b751a80",
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"cypress",
-			"esbuild",
-			"react-vertical-timeline-component",
-			"sharp"
-		]
-	}
+	"packageManager": "pnpm@11.25.0+sha256.33dd0748f27e7916c4f1c8b6943461983e3453b06bbda6312a6280130b4881e5"
 }

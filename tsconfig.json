@@ -10,7 +10,8 @@
 			"@layouts/*": ["src/layouts/*"],
 			"@assets/*": ["src/assets/*"],
 			"@data/*": ["src/data/*"],
-			"@type/*": ["src/types/*"]
+			"@type/*": ["src/types/*"],
+			"@utils/*": ["src/utils/*"]
 		},
 		"types": ["vite/client"],
 		"plugins": [
