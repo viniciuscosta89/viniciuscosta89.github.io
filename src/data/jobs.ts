@@ -12,12 +12,12 @@ export const jobs: JobType[] = [
 		},
 		when: {
 			from: 'Jul 2024',
-			to: 'Current',
+			to: 'Sep 2026',
 		},
 		icon: quantumIcon.src,
 		activities: [
 			{
-				en: 'Develop components, integrations, features with Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query and Zustand',
+				en: 'Develop components, integrations and features with Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query and Zustand',
 				'pt-br':
 					'Desenvolver componentes, integrações e features com Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query e Zustand',
 			},
@@ -41,9 +41,9 @@ export const jobs: JobType[] = [
 					'Participar de standups diários, planejamento de sprint, revisões de sprint e retrospectivas de sprint',
 			},
 			{
-				en: 'Enhancement and evolution of the design system using Storybook',
+				en: 'Enhance and evolve the design system using Storybook',
 				'pt-br':
-					'Melhoria e aprimoramento contínuo do sistema de design utilizando o Storybook',
+					'Melhorar e aprimorar continuamente o sistema de design utilizando o Storybook',
 			},
 		],
 	},
