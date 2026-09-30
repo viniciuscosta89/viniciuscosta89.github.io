@@ -84,6 +84,20 @@ function Jobs({ jobs }: JobsProps) {
 									);
 								})}
 							</ul>
+
+							<ul
+								className="mt-4 flex flex-wrap gap-2"
+								aria-label="Technologies used"
+							>
+								{job.stack.map((tech) => (
+									<li
+										className="bg-primary text--1 text-neutral-900 rounded-sm px-3 py-1 leading-5 font-medium"
+										key={tech}
+									>
+										{tech}
+									</li>
+								))}
+							</ul>
 						</VerticalTimelineElement>
 					))}
 				</VerticalTimeline>
