@@ -1,5 +1,6 @@
 function toUTCMidnight(date: string | Date): Date {
-	const isoDate = typeof date === 'string' ? date : date.toISOString().slice(0, 10);
+	const isoDate =
+		typeof date === 'string' ? date : date.toISOString().slice(0, 10);
 	return new Date(`${isoDate}T00:00:00Z`);
 }
 
