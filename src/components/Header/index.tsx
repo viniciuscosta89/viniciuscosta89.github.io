@@ -1,7 +1,7 @@
 import profileDesktop from '@assets/image-profile-desktop.webp';
 import Container from '@components/Container';
 import { socialNetworks } from '@data/social-networks';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 
 function Header() {
