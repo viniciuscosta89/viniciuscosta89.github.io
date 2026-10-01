@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import type { LinkProps } from './Link.types';
 
 export default function Link({

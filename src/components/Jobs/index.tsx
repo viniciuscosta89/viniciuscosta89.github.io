@@ -4,7 +4,18 @@ const { VerticalTimeline, VerticalTimelineElement } = pkg;
 
 import Container from '@components/Container';
 import Icons from '@components/Icons';
+import { motion, stagger, type Variants } from 'motion/react';
 import type { JobsProps } from './Jobs.types';
+
+const stackVariants: Variants = {
+	hidden: {},
+	visible: { transition: { delayChildren: stagger(0.1) } },
+};
+
+const tagVariants: Variants = {
+	hidden: { opacity: 0, y: 30 },
+	visible: { opacity: 1, y: 0, transition: { type: 'spring' } },
+};
 
 const capitalizeFirstLetter = (string: string): string => {
 	const word = string;
@@ -84,6 +95,25 @@ function Jobs({ jobs }: JobsProps) {
 									);
 								})}
 							</ul>
+
+							<motion.ul
+								className="mt-4 flex flex-wrap gap-2"
+								aria-label="Technologies used"
+								variants={stackVariants}
+								initial="hidden"
+								whileInView="visible"
+								viewport={{ once: true }}
+							>
+								{job.stack.map((tech) => (
+									<motion.li
+										className="bg-primary text--1 text-neutral-900 rounded-sm px-3 py-1 leading-5 font-medium"
+										key={tech}
+										variants={tagVariants}
+									>
+										{tech}
+									</motion.li>
+								))}
+							</motion.ul>
 						</VerticalTimelineElement>
 					))}
 				</VerticalTimeline>

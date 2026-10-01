@@ -8,6 +8,7 @@ export interface JobType {
 		to: string;
 	};
 	activities: englishPortugueseStrings[];
+	stack: string[];
 	icon?: string;
 }
 

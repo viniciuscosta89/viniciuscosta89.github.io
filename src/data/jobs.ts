@@ -15,6 +15,17 @@ export const jobs: JobType[] = [
 			to: 'Sep 2026',
 		},
 		icon: quantumIcon.src,
+		stack: [
+			'Next.js',
+			'React',
+			'TypeScript',
+			'TailwindCSS',
+			'Motion',
+			'TanStack Query',
+			'Zustand',
+			'Cypress',
+			'Storybook',
+		],
 		activities: [
 			{
 				en: 'Develop components, integrations and features with Next.js, React, Typescript, TailwindCSS, Motion, TanStack Query and Zustand',
@@ -59,6 +70,7 @@ export const jobs: JobType[] = [
 			from: 'Aug 2023',
 			to: 'Jul 2024',
 		},
+		stack: ['React', 'TypeScript', 'Styled Components', 'AEM', 'Adobe Target'],
 		activities: [
 			{
 				en: 'Develop components with React, Typescript and Styled Components for AEM',
@@ -83,6 +95,15 @@ export const jobs: JobType[] = [
 			from: 'Oct 2021',
 			to: 'Jun 2023',
 		},
+		stack: [
+			'AEM',
+			'React',
+			'TypeScript',
+			'JavaScript',
+			'Sass',
+			'Chakra UI',
+			'Jest',
+		],
 		activities: [
 			{
 				en: 'Institutional website development with AEM, Javascript and Sass',
@@ -108,6 +129,17 @@ export const jobs: JobType[] = [
 			from: 'Jan 2019',
 			to: 'Oct 2021',
 		},
+		stack: [
+			'Vue.js',
+			'Vuex',
+			'JavaScript',
+			'jQuery',
+			'Bootstrap',
+			'Sass',
+			'webpack',
+			'Gulp',
+			'WordPress',
+		],
 		activities: [
 			{
 				en: 'WordPress institutional website maintenance and upgrade',
@@ -137,6 +169,7 @@ export const jobs: JobType[] = [
 			from: 'Aug 2016',
 			to: 'Jun 2018',
 		},
+		stack: ['HTML', 'CSS', 'JavaScript', 'WordPress', 'SharePoint'],
 		activities: [
 			{
 				en: 'Landing pages development',
