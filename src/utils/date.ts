@@ -21,3 +21,17 @@ export function getYearsOfExperience(
 	}
 	return floored;
 }
+
+export function getCareerYears(items: { startDate: string }[]): number {
+	const earliest = items.reduce(
+		(min, { startDate }) => (startDate < min ? startDate : min),
+		items[0].startDate,
+	);
+	return getYearsOfExperience(earliest);
+}
+
+export function formatPeriod(startDate: string, endDate?: string): string {
+	const startYear = startDate.slice(0, 4);
+	const endYear = endDate ? endDate.slice(0, 4) : 'present';
+	return startYear === endYear ? startYear : `${startYear}–${endYear}`;
+}

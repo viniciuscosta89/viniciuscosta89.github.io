@@ -6,6 +6,14 @@
 
 
 
+
+
+
+
+
+
+
+
 import patternRings from '@assets/pattern-rings.svg';
 import { Contact } from '@components/Contact';
 import Container from '@components/Container';
@@ -18,16 +26,23 @@ import Jobs from '@components/Jobs';
 import Link from '@components/Link';
 import { Project } from '@components/Project';
 import SectionTitle from '@components/SectionTitle';
-import { experienceItems } from '@data/experience';
+import {
+	experienceCategories,
+	experienceItems,
+	practiceItems,
+} from '@data/experience';
 import { jobs } from '@data/jobs';
 import { projects } from '@data/projects';
 import Layout from '@layouts/Layout.astro';
-import { getYearsOfExperience } from '@utils/date';
+import { getCareerYears, getYearsOfExperience } from '@utils/date';
 import { motion } from 'motion/react';
 import { FaProjectDiagram } from 'react-icons/fa';
 import { FaIdCard, FaStar } from 'react-icons/fa6';
 import Icons from '../components/Icons';
 import { VerticalNav } from '../components/VerticalNav';
+
+const currentExperienceItems = experienceItems.filter((item) => !item.endDate);
+const previousExperienceItems = experienceItems.filter((item) => item.endDate);
 ---
 
 <Layout>
@@ -57,21 +72,48 @@ import { VerticalNav } from '../components/VerticalNav';
 
       <Experience.Root>
         <Container>
-          <Experience.Grid>
+          <div class="grid gap-10 md:gap-14 py-10 md:py-[3.25rem_2.25rem]">
+            <Experience.Summary careerYears={getCareerYears(experienceItems)} />
+
             {
-              experienceItems.map((experience, i) => (
-                <Experience.Item delay={0.15 * i} client:visible>
-                  <Experience.Name name={experience.name} />
-                  <Experience.Text
-                    yearsOfExperience={getYearsOfExperience(
-                      experience.startDate,
-                      experience.endDate,
-                    )}
-                  />
-                </Experience.Item>
+              experienceCategories.map((category) => (
+                <Experience.Category label={category.label}>
+                  <Experience.Grid>
+                    {currentExperienceItems
+                      .filter((item) => item.category === category.id)
+                      .map((experience, i) => (
+                        <Experience.Item delay={0.15 * i} client:visible>
+                          <Experience.Name
+                            name={experience.name}
+                            icon={experience.icon}
+                          />
+                          <Experience.Text
+                            startDate={experience.startDate}
+                            yearsOfExperience={getYearsOfExperience(
+                              experience.startDate,
+                            )}
+                          />
+                        </Experience.Item>
+                      ))}
+                  </Experience.Grid>
+                </Experience.Category>
               ))
             }
-          </Experience.Grid>
+
+            <Experience.Category label="Practices">
+              <Experience.Grid>
+                {
+                  practiceItems.map((practice, i) => (
+                    <Experience.Item delay={0.15 * i} client:visible>
+                      <Experience.Name name={practice.name} icon={practice.icon} />
+                    </Experience.Item>
+                  ))
+                }
+              </Experience.Grid>
+            </Experience.Category>
+
+            <Experience.Previous items={previousExperienceItems} />
+          </div>
         </Container>
       </Experience.Root>
 

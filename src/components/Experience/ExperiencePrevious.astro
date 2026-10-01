@@ -1,0 +1,31 @@
+---
+
+import type { ExperienceItemsType } from '@type/experience';
+import { formatPeriod } from '@utils/date';
+
+interface Props {
+	items: ExperienceItemsType[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <div class="grid gap-3">
+      <h3 class="text-neutral-200 text--2 lg:text--1 font-bold uppercase tracking-[0.2em]">
+        Previously
+      </h3>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 text-neutral-400 text--1 lg:text-0">
+        {items.map(({ name, icon: Icon, startDate, endDate }) => (
+          <li class="flex items-center gap-2">
+            {Icon && <Icon aria-hidden="true" className="shrink-0" />}
+            <span>
+              {name} <span class="text-neutral-500">({formatPeriod(startDate, endDate)})</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
