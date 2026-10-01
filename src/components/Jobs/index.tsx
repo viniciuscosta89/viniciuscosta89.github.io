@@ -9,7 +9,7 @@ import type { JobsProps } from './Jobs.types';
 
 const stackVariants: Variants = {
 	hidden: {},
-	visible: { transition: { delayChildren: stagger(0.2) } },
+	visible: { transition: { delayChildren: stagger(0.1) } },
 };
 
 const tagVariants: Variants = {
@@ -101,7 +101,6 @@ function Jobs({ jobs }: JobsProps) {
 								aria-label="Technologies used"
 								variants={stackVariants}
 								initial="hidden"
-								animate="visible"
 								whileInView="visible"
 								viewport={{ once: true }}
 							>
@@ -110,8 +109,6 @@ function Jobs({ jobs }: JobsProps) {
 										className="bg-primary text--1 text-neutral-900 rounded-sm px-3 py-1 leading-5 font-medium"
 										key={tech}
 										variants={tagVariants}
-										initial="hidden"
-										whileInView="visible"
 									>
 										{tech}
 									</motion.li>
