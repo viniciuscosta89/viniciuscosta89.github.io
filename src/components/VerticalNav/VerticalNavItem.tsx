@@ -9,39 +9,34 @@ function VerticalNavItem({
 	id: string;
 	isLast?: boolean;
 }) {
-	const element = document.querySelector(`#${id}`);
 	const [elementIsVisible, setElementIsVisible] = useState(false);
 
 	const scrollIntoView = () => {
-		element.scrollIntoView({
+		document.querySelector(`#${id}`)?.scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',
 		});
 	};
 
-	console.log(
-		id,
-		elementIsVisible,
-		element.getBoundingClientRect().top,
-		element.getBoundingClientRect().bottom,
-		element.scrollHeight,
-	);
-
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			setElementIsVisible(
-				element.getBoundingClientRect().top <= 64 &&
-					element.getBoundingClientRect().bottom > 64,
-				// element.getBoundingClientRect().top > -element.scrollHeight,
-			);
-		});
-	});
+		const element = document.querySelector(`#${id}`);
+		if (!element) return;
+
+		const onScroll = () => {
+			const { top, bottom } = element.getBoundingClientRect();
+			setElementIsVisible(top <= 64 && bottom > 64);
+		};
+
+		window.addEventListener('scroll', onScroll);
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [id]);
 
 	return (
 		<button
 			onClick={scrollIntoView}
 			type="button"
-			className={`flex flex-col items-center gap-2 py-4 text-sm tracking-wide uppercase transition duration-300 hover:text-red-500 ${elementIsVisible ? 'text-red-500' : 'text-white'} ${isLast ? '' : 'border-b-1 border-b-neutral-600'}`}
+			aria-current={elementIsVisible ? 'location' : undefined}
+			className={`flex flex-1 flex-col items-center gap-1 py-2 text-[0.625rem] tracking-wide uppercase transition duration-300 hover:text-red-500 md:text-xs lg:flex-none lg:gap-2 lg:py-4 lg:text-sm ${elementIsVisible ? 'text-red-500' : 'text-white'} ${isLast ? '' : 'border-r-1 border-r-neutral-600 lg:border-r-0 lg:border-b-1 lg:border-b-neutral-600'}`}
 		>
 			{children}
 		</button>
