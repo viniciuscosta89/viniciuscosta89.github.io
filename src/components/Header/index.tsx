@@ -80,8 +80,9 @@ function Header() {
 							<motion.img
 								className={`hidden lg:block ${profileImageClassName}`}
 								alt="AI rendered Vinicius Costa"
-								// widths={[375, 768, 1140]}
 								src={profileDesktop.src}
+								width={profileDesktop.width}
+								height={profileDesktop.height}
 								initial={{ opacity: 0, y: -50 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -50 }}
@@ -99,6 +100,8 @@ function Header() {
 					className={`block ${profileImageClassName}`}
 					alt="AI rendered Vinicius Costa"
 					src={profileDesktop.src}
+					width={profileDesktop.width}
+					height={profileDesktop.height}
 					initial={{ opacity: 0, y: -50 }}
 					animate={{ opacity: 1, y: 0 }}
 				/>
