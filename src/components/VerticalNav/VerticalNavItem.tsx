@@ -23,11 +23,16 @@ function VerticalNavItem({
 		if (!element) return;
 
 		const onScroll = () => {
+			// The section counts as current once it reaches the sticky header's
+			// bottom edge (+1px for sub-pixel scroll positions).
+			const headerBottom =
+				document.getElementById('header')?.getBoundingClientRect().bottom ?? 64;
 			const { top, bottom } = element.getBoundingClientRect();
-			setElementIsVisible(top <= 64 && bottom > 64);
+			setElementIsVisible(top <= headerBottom + 1 && bottom > headerBottom + 1);
 		};
 
-		window.addEventListener('scroll', onScroll);
+		onScroll();
+		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => window.removeEventListener('scroll', onScroll);
 	}, [id]);
 

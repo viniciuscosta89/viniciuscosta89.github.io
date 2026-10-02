@@ -7,12 +7,30 @@ import { useEffect, useRef, useState } from 'react';
 function Header() {
 	const [isSticky, setSticky] = useState(false);
 
-	const element = useRef(null);
+	const element = useRef<HTMLElement>(null);
+
+	// Publish the header's real height so sections' `scroll-margin-top` and
+	// the section nav's active threshold clear it at every breakpoint (it is
+	// ~108px when stuck on mobile, not the 64px those used to assume).
+	useEffect(() => {
+		const header = element.current;
+		if (!header) return;
+
+		const observer = new ResizeObserver(() => {
+			document.documentElement.style.setProperty(
+				'--header-h',
+				`${header.getBoundingClientRect().height}px`,
+			);
+		});
+
+		observer.observe(header);
+		return () => observer.disconnect();
+	}, []);
 
 	useEffect(() => {
 		const onScroll = () =>
 			setSticky(
-				window.scrollY > element.current.getBoundingClientRect().bottom,
+				window.scrollY > (element.current?.getBoundingClientRect().bottom ?? 0),
 			);
 
 		window.addEventListener('scroll', onScroll, { passive: true });
