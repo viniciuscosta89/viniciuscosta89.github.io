@@ -1,32 +1,19 @@
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 interface Props {
 	yearsOfExperience: number;
+	startDate: string;
 }
 
-const { yearsOfExperience } = Astro.props;
+const { yearsOfExperience, startDate } = Astro.props;
 ---
 
 <p class="text-neutral-200 text--1 lg:text-0 font-normal leading-[1.62] lg:leading-[1.55]">
-  <Fragment>
-    {
-      yearsOfExperience < 2
-        ? yearsOfExperience + ' year'
-        : yearsOfExperience + ' years'
-    }
-  </Fragment>
+  {
+    yearsOfExperience < 1
+      ? `Since ${startDate.slice(0, 4)}`
+      : yearsOfExperience < 2
+        ? `${yearsOfExperience} year`
+        : `${yearsOfExperience} years`
+  }
 </p>

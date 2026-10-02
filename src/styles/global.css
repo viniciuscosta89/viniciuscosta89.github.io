@@ -39,6 +39,11 @@
 		-webkit-text-size-adjust: 100%;
 	}
 
+	:root {
+		/* Overwritten at runtime by the Header with its real height. */
+		--header-h: 4rem;
+	}
+
 	html {
 		@apply box-border h-full;
 		scroll-behavior: smooth;
@@ -157,7 +162,7 @@
 	}
 
 	section {
-		@apply scroll-mt-16;
+		@apply scroll-mt-(--header-h);
 	}
 }
 

@@ -1,0 +1,12 @@
+---
+
+interface Props {
+	careerYears: number;
+}
+
+const { careerYears } = Astro.props;
+---
+
+<p class="text-white text-3 lg:text-5 font-bold tracking-[-0.09375rem] leading-tight">
+  <span class="text-primary">{careerYears}+ years</span> building for the web
+</p>
