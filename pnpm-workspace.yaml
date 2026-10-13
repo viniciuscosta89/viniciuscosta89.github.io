@@ -5,7 +5,13 @@ packages:
   - '.'
 
 allowBuilds:
-  cypress: true
   esbuild: true
   react-vertical-timeline-component: true
   sharp: true
+
+# Security: force patched versions of transitive deps whose parents haven't
+# bumped them yet (Dependabot alerts). Remove once upstreams catch up.
+overrides:
+  path-to-regexp@>=4.0.0 <6.3.0: ^6.3.0
+  esbuild@<=0.24.2: ^0.25.0
+  i18next-http-backend@<4.0.2: ^4.0.2
