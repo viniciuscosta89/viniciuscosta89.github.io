@@ -23,7 +23,6 @@
 **Lint:** `pnpm lint` (Biome, writes fixes to files in `src/**/*.{js,ts,jsx,tsx,astro}`)
 **Format:** `pnpm format` (Biome, writes formatting to files in `src/**/*.{js,ts,jsx,tsx,astro}`)
 **Check:** `pnpm check` (Biome, runs all checks and organizes imports for files in `src/**/*.{js,ts,jsx,tsx,astro}`)
-**Cypress:** `pnpm cypress:open` (E2E/component tests)
 
 ## Patterns & Conventions
 - **Composition:** Prefer `.Root`/`.Item` pattern (see VerticalNav, Hero, Project).
@@ -71,8 +70,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/) for all comm
 - **Astro-i18next:** Locale detection/translation loading.
 
 ## Project-Specific Notes
-**Trusted Dependencies:** `cypress`, `esbuild`, `react-vertical-timeline-component`, `sharp` — allowlisted via `allowBuilds` in `pnpm-workspace.yaml` (pnpm no longer reads this from a `"pnpm"` key in `package.json`).
-**Testing:** Cypress ^13 is installed with a `cypress:open` script, but there is no `cypress.config` and no spec files anywhere in the repo — treat it as unused/unconfigured, not an active test suite.
+**Trusted Dependencies:** `esbuild`, `react-vertical-timeline-component`, `sharp` — allowlisted via `allowBuilds` in `pnpm-workspace.yaml` (pnpm no longer reads this from a `"pnpm"` key in `package.json`).
+**Testing:** Vitest (`pnpm test`) with a single spec, `src/utils/date.test.ts`; no component or E2E tests.
 **i18n caveat:** `public/locales/*/experience.json` defines `yearsOfExperience_one`/`_other` pluralization keys, but nothing in `src` calls `useTranslation`/`i18next` for them — the Experience section's singular/plural text is hard-coded inline in `ExperienceText.astro` instead. Don't assume astro-i18next is wired into every section just because locale files exist for it.
 **Linting & Formatting:** Biome 2 is the primary tool, configured via `biome.json` to include files in `src/**/*.{js,ts,jsx,tsx,astro,css}`. No ESLint config.
 **TypeScript:** Types in `src/types/`, one file per `src/data/*` domain.
