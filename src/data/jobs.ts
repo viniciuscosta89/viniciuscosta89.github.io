@@ -93,7 +93,7 @@ export const jobs: JobType[] = [
 		},
 		when: {
 			from: 'Oct 2021',
-			to: 'Jun 2023',
+			to: 'May 2023',
 		},
 		stack: [
 			'AEM',
