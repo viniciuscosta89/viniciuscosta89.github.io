@@ -21,6 +21,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
+        env:
+          # Lets @sentry/astro upload source maps and create the release during the build.
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         with:
           node-version: 24 # Astro 7 requires Node >=22.12; match .nvmrc. Defaults to 20 otherwise.
           # path: . # The root location of your Astro project inside the repository. (optional)
