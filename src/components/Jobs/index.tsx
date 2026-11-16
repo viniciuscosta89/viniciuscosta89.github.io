@@ -4,6 +4,7 @@ const { VerticalTimeline, VerticalTimelineElement } = pkg;
 
 import Container from '@components/Container';
 import Icons from '@components/Icons';
+import { formatMonthYear } from '@utils/date';
 import { motion, stagger, type Variants } from 'motion/react';
 import type { JobsProps } from './Jobs.types';
 
@@ -23,12 +24,6 @@ const capitalizeFirstLetter = (string: string): string => {
 	const restOfWord = word.slice(1);
 	return `${firstLetter.toUpperCase()}${restOfWord}`;
 };
-
-const formatDate = (isPortuguese: boolean, date: string): string =>
-	new Intl.DateTimeFormat(isPortuguese ? 'pt-BR' : 'en', {
-		month: 'long',
-		year: 'numeric',
-	}).format(new Date(date));
 
 function Jobs({ jobs }: JobsProps) {
 	return (
@@ -53,11 +48,11 @@ function Jobs({ jobs }: JobsProps) {
 								borderRightColor: 'var(--color-bg-gray)',
 							}}
 							date={`${capitalizeFirstLetter(
-								formatDate(false, job.when.from),
+								formatMonthYear(job.when.from),
 							)} - ${
 								job.when.to === 'Current'
 									? 'Current'
-									: formatDate(false, job.when.to)
+									: formatMonthYear(job.when.to)
 							}`}
 							dateClassName="text--1 py-[1rem_0]"
 							icon={

@@ -35,3 +35,18 @@ export function formatPeriod(startDate: string, endDate?: string): string {
 	const endYear = endDate ? endDate.slice(0, 4) : 'present';
 	return startYear === endYear ? startYear : `${startYear}–${endYear}`;
 }
+
+/**
+ * Formats a `YYYY-MM` string as e.g. "July 2024". Parses the parts explicitly
+ * and formats in UTC: `new Date('Jul 2024')` is non-standard (Invalid Date in
+ * Safari/Firefox) and local-time parsing can shift the month between the
+ * build server and the visitor's timezone, breaking hydration.
+ */
+export function formatMonthYear(yearMonth: string, locale = 'en'): string {
+	const [year, month] = yearMonth.split('-').map(Number);
+	return new Intl.DateTimeFormat(locale, {
+		month: 'long',
+		year: 'numeric',
+		timeZone: 'UTC',
+	}).format(new Date(Date.UTC(year, month - 1, 1)));
+}
