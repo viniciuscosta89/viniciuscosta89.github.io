@@ -4,7 +4,9 @@ export interface JobType {
 	url: string;
 	role: englishPortugueseStrings;
 	when: {
+		/** `YYYY-MM` */
 		from: string;
+		/** `YYYY-MM`, or `'Current'` for an ongoing job */
 		to: string;
 	};
 	activities: englishPortugueseStrings[];

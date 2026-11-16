@@ -11,8 +11,8 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end',
 		},
 		when: {
-			from: 'Jul 2024',
-			to: 'Sep 2026',
+			from: '2024-07',
+			to: '2026-09',
 		},
 		icon: quantumIcon.src,
 		stack: [
@@ -67,8 +67,8 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end/Tech Designer',
 		},
 		when: {
-			from: 'Aug 2023',
-			to: 'Jul 2024',
+			from: '2023-08',
+			to: '2024-07',
 		},
 		stack: ['React', 'TypeScript', 'Styled Components', 'AEM', 'Adobe Target'],
 		activities: [
@@ -92,8 +92,8 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end Pleno',
 		},
 		when: {
-			from: 'Oct 2021',
-			to: 'May 2023',
+			from: '2021-10',
+			to: '2023-05',
 		},
 		stack: [
 			'AEM',
@@ -126,8 +126,8 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end Júnior / Jr. II',
 		},
 		when: {
-			from: 'Jan 2019',
-			to: 'Oct 2021',
+			from: '2019-01',
+			to: '2021-10',
 		},
 		stack: [
 			'Vue.js',
@@ -166,8 +166,8 @@ export const jobs: JobType[] = [
 			'pt-br': 'Desenvolvedor Front-end',
 		},
 		when: {
-			from: 'Aug 2016',
-			to: 'Jun 2018',
+			from: '2016-08',
+			to: '2018-06',
 		},
 		stack: ['HTML', 'CSS', 'JavaScript', 'WordPress', 'SharePoint'],
 		activities: [

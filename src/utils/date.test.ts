@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getYearsOfExperience } from './date';
+import { formatMonthYear, getYearsOfExperience } from './date';
 
 describe('getYearsOfExperience', () => {
 	const referenceDate = new Date('2026-09-02T12:00:00Z');
@@ -56,5 +56,15 @@ describe('getYearsOfExperience', () => {
 		expect(getYearsOfExperience('2016-08-01', undefined, referenceDate)).toBe(
 			expectedYears,
 		);
+	});
+});
+
+describe('formatMonthYear', () => {
+	it('formats a YYYY-MM string in English', () => {
+		expect(formatMonthYear('2024-07')).toBe('July 2024');
+	});
+
+	it('does not shift January back into the previous year', () => {
+		expect(formatMonthYear('2019-01')).toBe('January 2019');
 	});
 });
